@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pizza Heaven Carry-Out</title>
 </head>
 <body>
+    <header>
+        <h1>It's Pizza Heaven time!!!</h1>
+    </header>
+
+    <main>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <fieldset>
+                <legend>Pizza Heaven's Toppings</legend>
+                <p>Choose from the following <strong>heavenly</strong> selection:</p>
+                <label for="pepperoni">
+                <input id="pepperoni" name="pizza_topping" type="checkbox" value="pepperoni">Pepperoni<br><br>
+                </label>
+                <label for="sausage">
+                    <input id="sausage" name="pizza_topping" type="checkbox" value="sausage">Sausage<br><br>
+                </label>
+                <label for="mushroom">
+                    <input id="mushroom" name="pizza_topping" type="checkbox" value="mushroom">Mushroom<br><br>
+                </label>
+                <label for="bell pepper">
+                    <input id="bell pepper" name="pizza_topping" type="checkbox" value="bell pepper">Bell Pepper<br><br>
+                </label>
+                <label for="onion">
+                    <input id="onion" name="pizza_topping" type="checkbox" value="onion">Onion<br><br>
+                </label>
+                <label for="black olives">
+                    <input id="black olives" name="pizza_topping" type="checkbox" value="black olives">Black Olives<br><br>
+                </label>
+                <label for="extra cheese">
+                    <input id="extra cheese" name="pizza_topping" type="checkbox" value="extra cheese">Extra Cheese<br><br>
+                </label>
+                <br>
+                <h2>The more <em>heavenly-delicious</em> pizza toppings, the better!!!</h2>
+                <br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>We appreciate your opinion!</legend>
+                <label for="customer_opinion">Please tell us if you'd like to see additional toppings added to our menu:</label><br><br>
+                <textarea id="customer_opinion" name="customer_opinion" cols=25 rows=5 placeholder="Hey, Pizza Heaven, my pizza needs..."></textarea><br><br>
+            </fieldset>
+            <br>
+            <button>Press here to get some PIZZA HEAVEN!!!</button>
+        </form>
+    </main>
 
 </body>
 </html>
+
