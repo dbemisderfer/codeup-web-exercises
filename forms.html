@@ -2,62 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register With Us</title>
+    <title>Veridian Dynamics: Register</title>
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
-        <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Enter Email">
-            <br>
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="Enter Password">
-            <br>
-            <br>
-        </div>
-        <div>
-            <br>
-            <label for="bio">We'd like to know you better!</label><br>
-            <textarea id="bio" name="bio" cols=80 rows=5 placeholder="Please, briefly tell us about yourself!"></textarea>
-            <br>
-            <br>
-        </div>
-        <fieldset>
-            <legend>Survey Question</legend>
-            <p>How did you hear about us?</p>
-            <label for="billboard">
-                <input type="checkbox" id="billboard" name="survey_question_1" value="billboard">Billboard<br>
-            </label>
-            <label for="radio_ad">
-                <input type="checkbox" id="radio_ad" name="survey_question_2" value="radio advertisement">Radio Advertisement<br>
-            </label>
-            <label for="internal_ad">
-                <input type="checkbox" id="internal_ad" name="survey_question_3" value="internal advertisement">Internal Advertisement<br>
-            </label>
-            <label for="other">
-                <input type="checkbox" id="other" name="survey_question_4" value="other">Other<br>
-            </label>
-        </fieldset>
 
-        </div>
-        <div>
-            <br>
+    <header>
+        <h1>Register With Us</h1>
+    </header>
+
+    <main>
+
+        <form method="POST" action="https://request-inspector.glitch.me/">
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Enter Email">
+                <br>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter Password">
+                <br>
+                <br>
+            </div>
+
+            <div>
+                <br>
+                <label for="bio">We'd like to know you better!</label><br>
+                <div>
+                    <textarea id="bio" name="bio" cols=80 rows=5 placeholder="Please, briefly tell us about yourself!"></textarea>
+                </div>
+                <br>
+                <br>
+            </div>
+
             <fieldset>
-                <legend>For Our Information...</legend><br>
-                <label for="user_web_browser">What web browser do you use?</label>
-                <select id="user_web_browser" name="user_web_browser">
-                    <option value="chrome">Chrome</option>
-                    <option value="firefox">Firefox</option>
-                    <option value="safari">Safari</option>
-                    <option value="other">Other</option>
-                </select><br><br>
+                <legend>Survey Question</legend>
+                <p>How did you hear about us?</p>
+                <label for="billboard">
+                    <input type="checkbox" id="billboard" name="survey_question_1" value="billboard">Billboard<br>
+                </label>
+                <label for="radio_ad">
+                    <input type="checkbox" id="radio_ad" name="survey_question_2" value="radio_ad">Radio Advertisement<br>
+                </label>
+                <label for="internal_ad">
+                    <input type="checkbox" id="internal_ad" name="survey_question_3" value="internal_ad">Internal Advertisement<br>
+                </label>
+                <label for="other">
+                    <input type="checkbox" id="other" name="survey_question_4" value="other">Other<br>
+                </label>
             </fieldset>
 
-            <br><br>
-        </div>
-        <div>
-            <button>Press Here to Submit !</button>
-        </div>
-    </form>
+            <div>
+                <br>
+                <fieldset>
+                    <legend>For Our Information...</legend><br>
+                    <label for="user_web_browser">What web browser do you use?</label>
+                    <select id="user_web_browser" name="user_web_browser">
+                        <option value="chrome">Chrome</option>
+                        <option value="firefox">Firefox</option>
+                        <option value="safari">Safari</option>
+                        <option value="other">Other</option>
+                    </select><br><br>
+                </fieldset>
+
+                <br><br>
+            </div>
+
+            <div>
+                <button>Press Here to Submit !</button>
+            </div>
+
+        </form>
+
+    </main>
+
 </body>
 </html>
