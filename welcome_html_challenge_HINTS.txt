@@ -1,0 +1,9 @@
+Hints for matching welcome.html styling challenge:
+
++ DO NOT ADD ANY EXTRA CLASSES OR IDs TO THE EXISTING HTML
++ font - American Typewriter
++ h1 - text-shadow, letter-spacing
++ first ul - use :first-child
++ ol - use :nth-of-type
++ Company Vision heading - use nth-child
++ img - use transform
