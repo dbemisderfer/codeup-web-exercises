@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(174	224	230 );
+}
+
+#wrapper {
+    font-family: "American Typewriter";
+}
+
+h1 {
+    color: rgb(5	1	136 );
+    text-shadow: 2px 2px rgb(241	70	234	);
+    text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 5px;
+}
+
+h2 {
+    color: rgb(52	132	48	);
+    font-size: 2em;
+    font-weight: 200;
+}
+
+li, th, td, p {
+    color: rgb(5	1	136	);
+    font-size: 1.2em;
+}
+
+main>section:first-child ul {
+    text-decoration: underline;
+}
+
+main>section:nth-of-type(2), header>h1 {
+    background-color: white;
+}
+
+main>section:nth-of-type(4) {
+    text-align: center;
+}
+
+header>h1 {
+    border-radius: 25px;
+}
+
+img {
+    transform: rotate(12deg)
+}
