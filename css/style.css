@@ -1,5 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Barlow+Condensed);
 body {
-    background-color: #ffe4c4;
+    /*background-color: #ffe4c4;*/
+    background-image: url(../img/seamless-sandy-leather.jpg);
+    background-size: 200px 200px;
+    background-position: center;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .fancy-header {
@@ -9,6 +14,61 @@ body {
 }
 
 .sub-header_styling {
-    color: #db7093;
+    color: #5d00bd;
     text-decoration: underline;
+}
+
+p {
+    font-size: 1.1em
+}
+
+ul {
+    list-style: square;
+    /*list-style-image: url(../img/pink-checkmark.png);*/
+    /*transform: scale(0.2);*/
+    font-size: 1.4em
+}
+
+ol {
+    list-style: upper-alpha;
+    font-size: 1.4em
+}
+
+.center {
+    padding-left: 200px;
+    /*display: block;*/
+    /*margin-left: center;*/
+    /*margin-right: center;*/
+    /*width: 75%;*/
+}
+
+table, td {
+    border: 2px solid rebeccapurple;
+    padding: 5px
+}
+
+td, th {
+    width: 15% ;
+    text-align: center;
+    font-size: 1.4em
+}
+
+a {
+    font-size: 1.1em
+}
+
+a:link {
+    color:blue;
+}
+
+a:visited {
+    color:red;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color:green;
 }
