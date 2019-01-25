@@ -7,6 +7,14 @@ body {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
+#container {
+    /*text-align: center;*/
+}
+
+li {
+    /*text-align: center;*/
+}
+
 .fancy-header {
     color: #800080;
     text-decoration: underline;
@@ -19,7 +27,8 @@ body {
 }
 
 p {
-    font-size: 1.1em
+    font-size: 1.2em;
+    text-align: center;
 }
 
 ul {
