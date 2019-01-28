@@ -1,0 +1,24 @@
+ :root {
+    --box1-bg-color: blue;
+    --box2-text-color: red;
+}
+#box1 {
+    width: 25%;
+    height: auto;
+    border: 10px solid var(--box2-text-color);
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    background-color: var(--box1-bg-color);
+    color: var(--box1-bg-color);
+}
+
+#box2{
+    width: 50%;
+    /*using percentages overrides box-sizing*/
+    height: auto;
+    border: 1px solid red;
+    margin: 5px;
+    box-sizing: border-box;
+    color: var(--box2-text-color);
+}
