@@ -10,7 +10,7 @@
 
 img {
     margin-left: 3%;
-    /*width: 95%;*/
+    width: 95%;
 }
 
 li {
@@ -101,26 +101,24 @@ a:hover i.fab.fa-instagram.fa-2x{
 
     img{
         margin: 0 1.5%;
-        /*width: 95%;*/
+        width: 95%;
     }
 
     #main {
         /*width: 60%;*/
-        float: left;
-        margin-left: 1%;
-
-
+        /*float: left;*/
+        /*margin-left: 1%;*/
     }
 
     .sub-section {
         /*width: 25%;*/
-        float: left;
-        margin-left: 7%;
+        /*float: left;*/
+        /*margin-left: 7%;*/
     }
 
     footer {
-        clear: both;
-        margin-left: 2%;
+        /*clear: both;*/
+        /*margin-left: 2%;*/
     }
 
 }
