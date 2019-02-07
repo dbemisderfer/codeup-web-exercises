@@ -30,6 +30,15 @@ alert("Welcome to my Website!");
 // var facebookHours = prompt("How many hours did you work at Facebook this week?");
 // var weeklyContractorSalary = alert("Your salary for the week is $" + ((+googlePay*+googleHours) + (+amazonPay*+amazonHours) + (+facebookPay*+facebookHours)) + ".");
 
+var google = parseInt((prompt("How much did Google pay you per hour?")).replace('$', ''));
+
+// or....
+
+var googleRate = parseInt((prompt('How much does Google pay per hour?')).replace('$', ''));
+var amazonRate = parseInt((prompt('How much does Amazon pay per hour?')).replace('$', ''));
+var facebookRate = parseInt((prompt('How much does Facebook pay per hour?')).replace('$', ''));
+
+// ^^^^^^^ Only if the user puts the dollar sign in the prompt ^^^^^^
 
 // add plus (+) to turn string into a #
 
