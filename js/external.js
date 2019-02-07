@@ -14,7 +14,7 @@ alert("Welcome to my Website!");
 //
 // var totalCost = (movieNumber*movieDays)*3;
 //
-// alert("The total amount due is $" + totalCost + ".");
+// alert("The total amount due is $" + totalCost.toFixed(2) + ".");
 
 // var rentalPriceInDollars = prompt("How much is the cost of a single rental, in dollars?");
 // var littleMermaidRental = prompt("How many days would you like to rent The Little Mermaid?");
@@ -40,7 +40,7 @@ var scheduleConflict = confirm("Does the class schedule conflict with your curre
 
 var enrollStudent = !classNotVacant && !scheduleConflict;
 
-enrollStudent = alert("Go ahead and enroll!");
+alert("It is " + enrollStudent + " that you can go ahead and enroll!");
 
 // var doNotEnroll = ((classVacancy === true) && (conflict === true)) || ((classVacancy === false) && (conflict === true)) || ((classVacancy === true) && (conflict === false));
 
@@ -50,4 +50,5 @@ enrollStudent = alert("Go ahead and enroll!");
 var amountPurchased = prompt("How many items were purchased by the customer?");
 var offerNotExpired = confirm("Is offer still valid? [Offer valid until March 2019]");
 var premiumMembershipVerified = confirm("Is customer a premium member?");
-var applyProductOffer = (amountPurchased > 2 && offerNotExpired) || premiumMembershipVerified
+var applyProductOffer = (Number(amountPurchased) > 2 && premiumMembershipVerified) || offerNotExpired;
+alert("It is " + applyProductOffer + " that you can take advantage of this offer!");
