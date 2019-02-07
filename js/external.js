@@ -24,7 +24,7 @@ var facebookPay = prompt("How much is Facebook paying you per hour?");
 var fHours = prompt("How many hours did you work at Facebook?");
 
 
-
+// add plus (+) to turn string into a #
 var classVacancy = confirm("Is the class full?");
 
 var conflict = confirm("Does the class schedule conflict with your current schedule?");
