@@ -1,4 +1,4 @@
-(function() {
+// (function() {
 
 "use strict";
 
@@ -11,6 +11,14 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
+// Instructor example
+// function sayHello(name) {
+//     return alert("Hello, " + name);
+// }
+//
+// sayHello("Dwight");
+
+// My work
 function sayHello(name) {
     return name;
 }
@@ -76,6 +84,11 @@ function isTwo(num) {
     return num === 2;
 }
 
+// Instructor example
+console.log("Random value is..." + random);
+console.log(isTwo(random));
+
+// My work
 console.log(isTwo(1));
 console.log(isTwo(2));
 console.log(isTwo(3));
@@ -98,6 +111,9 @@ var tipPercentage = prompt("As a percentage, what amount of your bill would you 
 function calculateTip(tipPercentage, totalBill) {
     return (tipPercentage/100)*totalBill;
 }
+
+// Instructor example
+// alert("The amount you should tip is $" + (calculateTip(tipPercentage/100, totalBill))).toFixed(2) + ".");
 
 alert("The amount you should tip is $" + calculateTip(tipPercentage, totalBill).toFixed(2) + ".");
 
@@ -138,4 +154,7 @@ function applyDiscount(originalPrice, discountPercent) {
 
 alert("Your discount price is $" + applyDiscount(originalPrice, discountPercent) + ".");
 
-})();
+
+
+
+// })();
