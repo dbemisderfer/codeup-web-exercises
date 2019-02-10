@@ -11,20 +11,21 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-// Instructor example
+// ***** Instructor example *****
 // function sayHello(name) {
 //     return alert("Hello, " + name);
 // }
 //
 // sayHello("Dwight");
 
-// My work
+// ***** My work *****
 function sayHello(name) {
     return name;
 }
 
 console.log("Hello, " + sayHello("Dwight") + "!");
 
+// ***** Alternate with prompt *****
 // var enteredName = prompt("Enter a name:");
 //
 // function sayHello(name) {
