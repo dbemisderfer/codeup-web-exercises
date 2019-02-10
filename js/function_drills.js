@@ -87,36 +87,50 @@
 
     console.log("isFalsy: " + isFalsy(false));
 
-    // COME BACK TO THIS!!!!!!!!!
-    // function isVowel(letter) {
-    //     return letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u";
-    //
-    //
-    // console.log("isVowel: " + isVowel("U"));
 
-    // This is not the most efficient method
-
-    // function isConsonant(letter) {
-    //     return letter === "b" || letter === "c" || letter === "d" || letter === "f" ||
-    //     letter === "g" || letter === "h" || letter === "j" || letter === "k" ||
-    //     letter === "l" || letter === "m" || letter === "n" || letter === "p" ||
-    //     letter === "q" || letter === "r" || letter === "s" || letter === "t" ||
-    //     letter === "v" || letter === "w" || letter === "x" || letter === "y" ||
-    //     letter === "z";
-    // }
-    //
-    // console.log("isConsonant: " + isConsonant("i"));
-
-    // This is MUCH MORE efficient
-    function isConsonant(letter) {
-        return !(letter === "a" ||
+    function isVowel(letter) {
+        return letter === "a" ||
             letter === "e" ||
             letter === "i" ||
             letter === "o" ||
-            letter === "u");
+            letter === "u" ||
+            letter === "A" ||
+            letter === "E" ||
+            letter === "I" ||
+            letter === "O" ||
+            letter === "U";
     }
 
-    console.log("isConsonant " + isConsonant("a"));
+
+    console.log("isVowel: " + isVowel("U"));
+
+    // This is NOT the most efficient method
+    function isConsonant(letter) {
+        return letter === "b" || letter === "c" || letter === "d" || letter === "f" ||
+        letter === "g" || letter === "h" || letter === "j" || letter === "k" ||
+        letter === "l" || letter === "m" || letter === "n" || letter === "p" ||
+        letter === "q" || letter === "r" || letter === "s" || letter === "t" ||
+        letter === "v" || letter === "w" || letter === "x" || letter === "y" ||
+        letter === "z";
+    }
+
+    console.log("isConsonant: " + isConsonant("i"));
+
+    // This is MUCH MORE efficient
+    function isConsonant(letter) {
+        return !(letter === "a") &&
+            !(letter === "e") &&
+            !(letter === "i") &&
+            !(letter === "o") &&
+            !(letter === "u") &&
+            !(letter === "A") &&
+            !(letter === "E") &&
+            !(letter === "I") &&
+            !(letter === "O") &&
+            !(letter === "U");
+    }
+
+    console.log("isConsonant " + isConsonant("u"));
 
     // This is a prompt for future use...
     // var letterTest = prompt("Enter a letter.");
