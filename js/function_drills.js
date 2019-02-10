@@ -87,11 +87,12 @@
 
     console.log("isFalsy: " + isFalsy(false));
 
-    function isVowel(letter) {
-        return letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u" || letter === "A" || letter === "E" || letter === "I" || letter === "O" || letter === "U";
-
-
-    console.log("isVowel: " + isVowel("U"));
+    // COME BACK TO THIS!!!!!!!!!
+    // function isVowel(letter) {
+    //     return letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u";
+    //
+    //
+    // console.log("isVowel: " + isVowel("U"));
 
     // This is not the most efficient method
 
