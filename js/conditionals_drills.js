@@ -2,22 +2,20 @@
     "use strict";
 
     // WORK IN PROGRESS...
-    // function makeJustinMessage(inputJustin) {
-    //     switch(inputJustin) {
-    //     case "justin":
-    //         console.log("It's Justin!");
-    //         break;
-    //     case inputJustin === inputJustin.includes(!isNaN(+inputJustin)):
-    //         console.log("INVALID INPUT");
-    //         break;
-    //     default:
-    //         console.log("It's not Justin.");
-    //         break;
-    //     }
-    //     return inputJustin;
-    // }
-    //
-    // makeJustinMessage("d1ustin");
+    function makeJustinMessage(inputJustin) {
+        var inputJustin = inputJustin.toLowerCase();
+        if (!isNaN(inputJustin) || inputJustin.trim() === "") {
+            console.log("INVALID INPUT");
+        } else if (inputJustin === "justin") {
+            console.log("It's Justin!");
+        } else {
+            console.log("It's not Justin.");
+        }
+        return inputJustin;
+
+    }
+
+    makeJustinMessage("justin22");
 
 // Using switch statement
 
