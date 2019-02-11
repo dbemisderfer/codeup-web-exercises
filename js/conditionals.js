@@ -23,6 +23,9 @@ var initialResponse = confirm("Would you like to enter an number?");
 if (initialResponse) {
 
     var num = prompt("Please enter a number:");
+    // Alternate version....
+    // num = number(num);
+    // if (num - num === 0) {
 
     if (!isNaN(+num)) {
 
