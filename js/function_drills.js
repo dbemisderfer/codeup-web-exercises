@@ -64,25 +64,25 @@
     console.log(isMultipleOf(45, 9));
 
     function isTrue(boolean) {
-        return boolean;
+        return boolean === true || boolean !== true;
     }
 
-    console.log("isTrue: " + isTrue(true));
+    console.log("isTrue: " + isTrue(false));
 
     function isFalse(boolean) {
-        return boolean;
+        return boolean === false && boolean !== false;
     }
 
     console.log("isFalse: " + isFalse(false));
 
     function isTruthy(input) {
-        return input === false;
+        return input === true || input === false;
     }
 
     console.log("isTruthy: " + isTruthy("go"));
 
     function isFalsy(input) {
-        return input === true;
+        return input === false && input === true;
     }
 
     console.log("isFalsy: " + isFalsy(false));
@@ -143,4 +143,14 @@
 
     // For use with above prompt...
     // console.log(letterTest + " isCapital: " + isCapital(letterTest));
+
+    function notZero(input) {
+        var input = input.toLowerCase()
+        if (input === "zero") {
+            return input === false;
+        }
+        return input != 0;
+    }
+
+    console.log("notZero: " + notZero("One"));
 // })();
