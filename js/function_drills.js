@@ -3,6 +3,88 @@
 
 // ******** BONUS Exercises *********
 
+    // function icyHot(temp1, temp2) {
+    //     return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
+    // }
+    //
+    // console.log("icyHot: " + icyHot(2, 120));
+
+    // function sleepIn(weekday, vacation) {
+    //     return (weekday === true && vacation === true) || (weekday === false && vacation === true) || (weekday === false && vacation === false);
+    // }
+    // console.log(sleepIn(true, false));
+
+    // function monkeyTrouble(aSmile, bSmile) {
+    //     return (aSmile && bSmile) || (!aSmile && !bSmile);
+    // }
+    //
+    // console.log(monkeyTrouble(true, false));
+
+    // function sumDouble(a, b) {
+    //     if (a === b) {
+    //         return ((a + b) * 2);
+    //     } else {
+    //         return (a + b);
+    //     }
+    // }
+    //
+    // console.log(sumDouble(2, 2));
+
+    // function diff21(n) {
+    //     if (n <= 21) {
+    //         return 21 - n;
+    //     } else {
+    //         return 2 * (n - 21);
+    //     }
+    // }
+    //
+    // console.log(diff21(22));
+
+    // function parrotTrouble(talking, hour) {
+    //     return talking === true && (7 > hour || hour > 20);
+    // }
+    //
+    // console.log(parrotTrouble(false, 6));
+
+
+    // function makes10(a,b) {
+    //     return a === 10 || b === 10 || a + b === 10;
+    // }
+    //
+    // console.log(makes10(1, 9));
+
+    // function nearHundred(n) {
+    //     return (Math.abs(100 - n) <= 10) || (200 - n) <= 10;
+    // }
+    //
+    // console.log("nearHundred: " + nearHundred(93));
+
+    // function posNeg(a, b, negative) {
+    //     if (a < 0 && b > 0 && negative === false) {
+    //         return true;
+    //     } else if (a > 0 && b < 0 && negative === false) {
+    //         return true;
+    //     } else if (a < 0 && b < 0 && negative === true) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+    //
+    // console.log(("posNeg: " + posNeg(-4, -5, true)));
+
+    // function notString(str) {
+    //     if (str === null || str === undefined || str.substring(0, 3) === 'not') {
+    //         return str;
+    //     }
+    //     return 'not ' + str;
+    // }
+    //
+    // console.log("notString: " + notString("not bad"));
+
+
+
+
     function isOdd(number) {
         return number % 2 == 1;
     }
