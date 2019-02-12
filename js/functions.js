@@ -87,7 +87,7 @@ function isTwo(num) {
 
 // Instructor example
 console.log("Random value is..." + random);
-console.log(isTwo(random));
+console.log("isTwo: " + isTwo(random));
 
 // My work
 console.log(isTwo(1));
