@@ -73,14 +73,14 @@
     //
     // console.log(("posNeg: " + posNeg(-4, -5, true)));
 
-    // function notString(str) {
-    //     if (str === null || str === undefined || str.substring(0, 3) === 'not') {
-    //         return str;
-    //     }
-    //     return 'not ' + str;
-    // }
-    //
-    // console.log("notString: " + notString("not bad"));
+    function notString(str) {
+        if (str === null || str === undefined || str.substring(0, 3) === 'not') {
+            return str;
+        }
+        return 'not ' + str;
+    }
+
+    console.log("notString: " + notString("not bad"));
 
 
 
