@@ -1,7 +1,7 @@
 // (function()
 "use strict";
 
-// For Loops: Problem 2
+// For Loops: Problem 2 (Completed)
 // function showMultiplicationTable(y) {
 //     return y;
 // }
@@ -10,18 +10,27 @@
 //     console.log(showMultiplicationTable(7) + " x " + x + " = " + showMultiplicationTable(7) * x);
 // }
 
-// For Loops: Problem 3
-// var x = Math.floor(Math.random() * 200) + 20;
+// Instructor example
+
+
+
+// For Loops: Problem 3 (Completed)
 //
-// for ( x; x <= 200; x++) {
+
+// for (var i = 1; i <= 10; i++) {
+//     var x = Math.floor(Math.random() * 180) + 20;
 //     if (x % 2 === 0) {
-//         console.log(x + " is even")
+//         console.log(x + " is even");
 //     } else {
-//         console.log(x + " is odd")
+//         console.log(x + " is odd");
 //     }
 // }
 
-// For Loops: Problem 4
+// Instructor example
+
+
+
+// For Loops: Problem 4 (Completed)
 
     // for (var i = 1; i <= 9; i++) {
     //     i = i.toString();
@@ -30,9 +39,27 @@
     //     console.log(str);
     // }
 
-// For Loops: Problem 5
+// Instructor example
 
-for (x = 100; x >= 5; x)
+// for(var r = 1; r < 10; r++){
+//     var print = "";
+//     for(var j = 1; j <= r; j++){
+//         print += r;
+//     }
+//     console.log(print);
+// }
+
+
+// For Loops: Problem 5 (Completed)
+
+// for (var x = 100; x >= 5; x-=5) {
+//     console.log(x);
+// }
+
+// Instructor example
+
+
+
 
 
 // FOR LOOP EXERCISES
