@@ -28,13 +28,14 @@
     console.log(planetsBreak);
 
     //Instructor solution
-    // var planetsList = planetsArray.join('</li><li>');
-    // var newString = "<ul><li>" + planetsList + "</li></ul>";
-    //
-    // console.log(newString);
+    var planetsList = planetsArray.join('</li><li>');
+    console.log(planetsList);
+
+    var newString = "<ul><li>" + planetsList + "</li></ul>";
+    console.log(newString);
 
 
-    // BACK TO THE DRAWING BOARD
+    // BACK TO THE DRAWING BOARD (i.e., NEVER use this solution)
     // planetsArray.unshift('<ul><li>');
     // console.log(planetsArray);
     //
