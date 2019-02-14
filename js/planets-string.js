@@ -1,8 +1,8 @@
-(function(){
+// (function(){
     "use strict";
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    var planetsArray = planetsString.split('|');
 
     /**
      * TODO:
@@ -11,7 +11,7 @@
      * console.log planetsArray to check your work
      */
 
-    // console.log(planetsArray);
+    console.log(planetsArray);
 
     /**
      * TODO:
@@ -24,4 +24,32 @@
      * string, and <li> tags around each planet.
      */
 
-})();
+    var planetsBreak = planetsArray.join('<br>');
+    console.log(planetsBreak);
+
+    //Instructor solution
+    // var planetsList = planetsArray.join('</li><li>');
+    // var newString = "<ul><li>" + planetsList + "</li></ul>";
+    //
+    // console.log(newString);
+
+
+    // BACK TO THE DRAWING BOARD
+    // planetsArray.unshift('<ul><li>');
+    // console.log(planetsArray);
+    //
+    // var planetsUnorderedList = planetsArray.join(',</li><li>,');
+    // console.log(planetsUnorderedList);
+    //
+    // var planetsArrayUL = planetsUnorderedList.split(',');
+    // console.log(planetsArrayUL);
+    //
+    // planetsArrayUL.push('</li></ul>');
+    // console.log(planetsArrayUL);
+    //
+    // var planetsUnorderedString = planetsArrayUL.join('');
+    // console.log(planetsUnorderedString);
+
+
+
+// })();
