@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -12,6 +12,11 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    // var person = {
+    //     firstName: "Dwight",
+    //     lastName: "Bemisderfer"
+    // };
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +26,12 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    // person.sayHello = function () {
+    //     return "Hello from " + person.firstName + " " + person.lastName
+    // };
+    //
+    // console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -41,6 +52,23 @@
     //     {name: 'Ryan', amount: 250},
     //     {name: 'George', amount: 320}
     // ];
+    //
+    //
+    // shoppers.forEach(function(shopper){
+    //
+    //     var discountAmount = (shopper.amount * .12);
+    //     var finalAmount = (shopper.amount - discountAmount);
+    //
+    //     if (shopper.amount > 200) {
+    //         console.log(shopper.name + " owed $" + shopper.amount + ", but has a discount of $"
+    //             + discountAmount.toFixed(2) + ". Only $" + finalAmount.toFixed(2) + " is now owed.");
+    //     } else {
+    //         console.log(shopper.name + " has no discount and owes $" + shopper.amount + ".");
+    //     }
+    //
+    // });
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -54,6 +82,69 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "Moby Dick",
+            author: {
+                firstName: "Herman",
+                lastName: "Melville"
+            }
+        },
+        {
+            title: "Rock Albums of the '70s: A Critical Guide",
+            author: {
+                firstName: "Robert",
+                lastName: "Christgau"
+            }
+
+        },
+        {
+            title: "Revelation",
+            author: {
+                firstName: "John",
+                lastName: "'the Revelator'"
+            }
+
+        },
+        {
+            title: "On the Banks of Plum Creek",
+            author: {
+                firstName: "Laura",
+                lastName: "Wilder"
+            }
+
+        },
+        {
+            title: "The Secret of the Old Mill",
+            author: {
+                firstName: "Franklin",
+                lastName: "Dixon"
+            }
+        }
+    ];
+
+    console.log(JSON.stringify(books));
+
+    function createBook(title, firstName, lastName) {
+
+            var book= books.push({
+            "title": title,
+            "author": {
+                firstName: firstName,
+                lastName: lastName
+            }
+        });
+        return book;
+    };
+
+
+createBook("The Hidden Staircase", "Carolyn", "Keene");
+    console.log(JSON.stringify(books));
+
+    // console.log(books[3].title);
+    // console.log(books[4].author.firstName);
+    // console.log(books[2].author.lastName);
 
     /**
      * TODO:
@@ -80,6 +171,24 @@
      *      ...
      */
 
+    // for (var i = 0; i < books.length; i += 1) {
+    //
+    //     console.log("Book # " + (i + 1));
+    //     console.log("Title: " + books[i].title);
+    //     console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+    //     console.log("-------");
+    // }
+
+    // Alternate method
+    // books.forEach(function(book, index){
+    //
+    //     console.log("Book # " + (index + 1));
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("-------");
+    //
+    // });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -91,4 +200,81 @@
      *   `showBookInfo` function.
      */
 
-})();
+    // function createBook(title, firstName, lastName) {
+    //     console.log(books);
+    //     books.push()
+    // }
+
+    // function createBook(title, author) {
+    //     books.library.unshift({
+    //         "title": title
+    //         "author": author
+    //     });
+    // };
+    //
+    // var books = {
+    //     library: [
+    //         {
+    //         title: "Moby Dick",
+    //         author: {
+    //             firstName: "Herman",
+    //             lastName: "Melville"
+    //             }
+    //         },
+    //         {
+    //             title: "Rock Albums of the '70s: A Critical Guide",
+    //                 author: {
+    //             firstName: "Robert",
+    //                 lastName: "Christgau"
+    //             }
+    //
+    //         },
+    //         {
+    //             title: "Revelation",
+    //                 author: {
+    //             firstName: "John",
+    //                 lastName: "'the Revelator'"
+    //             }
+    //
+    //         },
+    //         {
+    //             title: "On the Banks of Plum Creek",
+    //                 author: {
+    //             firstName: "Laura",
+    //                 lastName: "Wilder"
+    //             }
+    //
+    //         },
+    //         {
+    //             title: "The Secret of the Old Mill",
+    //                 author: {
+    //             firstName: "Franklin",
+    //                 lastName: "Dixon"
+    //             }
+    //         }]
+    //     addBook: createBook
+    // }
+
+    // console.log(books);
+    // console.log(books.library.addBook("The Secret of the Old Clock"));
+    // console.log(books);
+
+//     BONUS 1 (expanding on the books object exercise):
+// Add a property "keywords" that contains an array of possible genres the book may be categorized by
+// Add a boolean property "available" and set it to true
+// Add a dateAvailable property that has a string of the date/time when the book will be available
+// Add a method lend() that...
+// - changes the available property to false if it is not already false
+// - sets the dateAvailable to a date exactly two weeks from when the lend() method is called
+// (to do this, research the JS Date object and use methods from it in your code)
+// Add a method receive() that...
+// - changes the available property to true
+// - changes the dateAvailable property to the string "now"
+// BONUS 2 (expanding on the books object exercise):
+// Create an application to take in user input to build the books array of objects.
+//     Allow the user to continue adding books or to finish adding books.
+//     Once the books have been added, output the books array in the console.
+//     Allow a user to delete a book or a group of books by title or author last name
+// Allow a user to edit a book by index number in the books array
+
+// })();
