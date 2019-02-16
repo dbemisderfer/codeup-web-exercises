@@ -83,68 +83,67 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Moby Dick",
-            author: {
-                firstName: "Herman",
-                lastName: "Melville"
-            }
-        },
-        {
-            title: "Rock Albums of the '70s: A Critical Guide",
-            author: {
-                firstName: "Robert",
-                lastName: "Christgau"
-            }
-
-        },
-        {
-            title: "Revelation",
-            author: {
-                firstName: "John",
-                lastName: "'the Revelator'"
-            }
-
-        },
-        {
-            title: "On the Banks of Plum Creek",
-            author: {
-                firstName: "Laura",
-                lastName: "Wilder"
-            }
-
-        },
-        {
-            title: "The Secret of the Old Mill",
-            author: {
-                firstName: "Franklin",
-                lastName: "Dixon"
-            }
-        }
-    ];
-
-    console.log(JSON.stringify(books));
-
-    function createBook(title, firstName, lastName) {
-
-            var book= books.push({
-            "title": title,
-            "author": {
-                firstName: firstName,
-                lastName: lastName
-            }
-        });
-        return book;
-    };
-
-
-createBook("The Hidden Staircase", "Carolyn", "Keene");
-    console.log(JSON.stringify(books));
-
-    // console.log(books[3].title);
-    // console.log(books[4].author.firstName);
-    // console.log(books[2].author.lastName);
+//     var books = [
+//         {
+//             title: "Moby Dick",
+//             author: {
+//                 firstName: "Herman",
+//                 lastName: "Melville"
+//             }
+//         },
+//         {
+//             title: "Rock Albums of the '70s: A Critical Guide",
+//             author: {
+//                 firstName: "Robert",
+//                 lastName: "Christgau"
+//             }
+//
+//         },
+//         {
+//             title: "Revelation",
+//             author: {
+//                 firstName: "John",
+//                 lastName: "'the Revelator'"
+//             }
+//
+//         },
+//         {
+//             title: "On the Banks of Plum Creek",
+//             author: {
+//                 firstName: "Laura",
+//                 lastName: "Wilder"
+//             }
+//
+//         },
+//         {
+//             title: "The Secret of the Old Mill",
+//             author: {
+//                 firstName: "Franklin",
+//                 lastName: "Dixon"
+//             }
+//         }
+//     ];
+//
+//     console.log(JSON.stringify(books));
+//
+//     function createBook(title, firstName, lastName) {
+//
+//              return books.push({
+//             "title": title,
+//             "author": {
+//                 firstName: firstName,
+//                 lastName: lastName
+//             }
+//         });
+//     };
+//
+//
+// createBook("The Hidden Staircase", "Carolyn", "Keene");
+//     console.log(JSON.stringify(books));
+//
+//     // console.log(books[3].title);
+//     // console.log(books[4].author.firstName);
+//     // console.log(books[2].author.lastName);
 
     /**
      * TODO:
@@ -200,64 +199,63 @@ createBook("The Hidden Staircase", "Carolyn", "Keene");
      *   `showBookInfo` function.
      */
 
-    // function createBook(title, firstName, lastName) {
-    //     console.log(books);
-    //     books.push()
-    // }
 
-    // function createBook(title, author) {
-    //     books.library.unshift({
-    //         "title": title
-    //         "author": author
-    //     });
-    // };
-    //
-    // var books = {
-    //     library: [
-    //         {
-    //         title: "Moby Dick",
-    //         author: {
-    //             firstName: "Herman",
-    //             lastName: "Melville"
-    //             }
-    //         },
-    //         {
-    //             title: "Rock Albums of the '70s: A Critical Guide",
-    //                 author: {
-    //             firstName: "Robert",
-    //                 lastName: "Christgau"
-    //             }
-    //
-    //         },
-    //         {
-    //             title: "Revelation",
-    //                 author: {
-    //             firstName: "John",
-    //                 lastName: "'the Revelator'"
-    //             }
-    //
-    //         },
-    //         {
-    //             title: "On the Banks of Plum Creek",
-    //                 author: {
-    //             firstName: "Laura",
-    //                 lastName: "Wilder"
-    //             }
-    //
-    //         },
-    //         {
-    //             title: "The Secret of the Old Mill",
-    //                 author: {
-    //             firstName: "Franklin",
-    //                 lastName: "Dixon"
-    //             }
-    //         }]
-    //     addBook: createBook
-    // }
+    function createBook(title, firstName, lastName) {
+        return library.books.push({
+            "title": title,
+            "author": {
+                firstName: firstName,
+                lastName: lastName
+            }
+        });
+    };
 
-    // console.log(books);
-    // console.log(books.library.addBook("The Secret of the Old Clock"));
-    // console.log(books);
+    var library = {
+        books: [
+            {
+            title: "Moby Dick",
+            author: {
+                firstName: "Herman",
+                lastName: "Melville"
+                }
+            },
+            {
+                title: "Rock Albums of the '70s: A Critical Guide",
+                    author: {
+                firstName: "Robert",
+                    lastName: "Christgau"
+                }
+
+            },
+            {
+                title: "Revelation",
+                    author: {
+                firstName: "John",
+                    lastName: "'the Revelator'"
+                }
+
+            },
+            {
+                title: "On the Banks of Plum Creek",
+                    author: {
+                firstName: "Laura",
+                    lastName: "Wilder"
+                }
+
+            },
+            {
+                title: "The Secret of the Old Mill",
+                    author: {
+                firstName: "Franklin",
+                    lastName: "Dixon"
+                }
+            }],
+        addBook: createBook
+    }
+
+    console.log(JSON.stringify(library.books));
+    console.log(library.addBook("The Exorcist", "William", "Blatty"));
+    console.log(JSON.stringify(library.books));
 
 //     BONUS 1 (expanding on the books object exercise):
 // Add a property "keywords" that contains an array of possible genres the book may be categorized by
