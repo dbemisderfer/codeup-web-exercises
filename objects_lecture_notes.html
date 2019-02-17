@@ -316,23 +316,31 @@
     function bark() {
         console.log("Woof");
     }
+
     function fix() {
         if (dog.sterilized === false){
             dog.sterilized = true
         }
     }
+
     function getOlder() {
         dog.age = dog.age + 1;
     }
-    function vaccinate(nameOfShot,currentdate,index) {
-        dog.shotRecords[index].typeOfShot = nameOfShot;
-        dog.shotRecords[index].date = currentdate;
-        // Most efficient method
-        // dog.shotRecords.unshift({
-        //     "nameOfShot": nameOfShot,
-        //     "currentDate": currentDate
-        // });
-    }
+
+    // function vaccinate(nameOfShot,currentdate,index) {
+    //     dog.shotRecords[index].typeOfShot = nameOfShot;
+    //     dog.shotRecords[index].date = currentdate;
+    // }
+
+    // // Most efficient method
+    function vaccinate(nameOfShot, currentDate) {
+        dog.shotRecords.unshift({
+            "nameOfShot": nameOfShot,
+            "currentDate": currentDate
+        });
+    };
+
+
     var dog = {
         breed: "Chow",
         weightInPounds: 12,
@@ -361,9 +369,11 @@
     console.log(dog.sterilized);
     dog.getFixed();
     console.log(dog.sterilized);
+    console.log("JSON " + JSON.stringify(dog.shotRecords[0]));
+    dog.vaccinate("Heartworm", "20-Mar-19");
+    // dog.vaccinate("Heart Worms", "Feb 15", [0]);
     console.log(dog.shotRecords[0]);
-    dog.vaccinate("Heart Worms", "Feb 15", [0]);
-    console.log(dog.shotRecords[0]);
+
     console.log(dog.shotRecords);
     // Collapse
 

@@ -83,59 +83,59 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-//     var books = [
-//         {
-//             title: "Moby Dick",
-//             author: {
-//                 firstName: "Herman",
-//                 lastName: "Melville"
-//             }
-//         },
-//         {
-//             title: "Rock Albums of the '70s: A Critical Guide",
-//             author: {
-//                 firstName: "Robert",
-//                 lastName: "Christgau"
-//             }
-//
-//         },
-//         {
-//             title: "Revelation",
-//             author: {
-//                 firstName: "John",
-//                 lastName: "'the Revelator'"
-//             }
-//
-//         },
-//         {
-//             title: "On the Banks of Plum Creek",
-//             author: {
-//                 firstName: "Laura",
-//                 lastName: "Wilder"
-//             }
-//
-//         },
-//         {
-//             title: "The Secret of the Old Mill",
-//             author: {
-//                 firstName: "Franklin",
-//                 lastName: "Dixon"
-//             }
-//         }
-//     ];
+    var books = [
+        {
+            title: "Moby Dick",
+            author: {
+                firstName: "Herman",
+                lastName: "Melville"
+            }
+        },
+        {
+            title: "Rock Albums of the '70s: A Critical Guide",
+            author: {
+                firstName: "Robert",
+                lastName: "Christgau"
+            }
+
+        },
+        {
+            title: "Revelation",
+            author: {
+                firstName: "John",
+                lastName: "'the Revelator'"
+            }
+
+        },
+        {
+            title: "On the Banks of Plum Creek",
+            author: {
+                firstName: "Laura",
+                lastName: "Wilder"
+            }
+
+        },
+        {
+            title: "The Secret of the Old Mill",
+            author: {
+                firstName: "Franklin",
+                lastName: "Dixon"
+            }
+        }
+    ];
 //
 //     console.log(JSON.stringify(books));
 //
-//     function createBook(title, firstName, lastName) {
-//
-//              return books.push({
-//             "title": title,
-//             "author": {
-//                 firstName: firstName,
-//                 lastName: lastName
-//             }
-//         });
-//     };
+    function createBook(title, firstName, lastName) {
+
+             return books.push({
+            "title": title,
+            "author": {
+                firstName: firstName,
+                lastName: lastName
+            }
+        });
+    };
 //
 //
 // createBook("The Hidden Staircase", "Carolyn", "Keene");
@@ -253,7 +253,7 @@
         addBook: createBook
     }
 
-    console.log(JSON.stringify(library.books));
+    console.log((JSON.stringify(library.books)));
     console.log(library.addBook("The Exorcist", "William", "Blatty"));
     console.log(JSON.stringify(library.books));
 
