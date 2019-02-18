@@ -17,20 +17,20 @@
             // TODO: complete this method.
 
             if (doRounding === true) {
-                console.log("Rounded: " + Math.round(circle.getArea()));
+                var rounded = Math.round(circle.getArea());
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + rounded);
             } else {
-                return console.log("Not rounded: " + circle.getArea());
+                var notRounded = circle.getArea();
+                console.log("Area of a circle with radius: " + this.radius + ", is: " + notRounded);
             };
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
             // console.log("Rounding Area: " + circle.logInfo());
-            console.log("Area of a circle with radius: " + this.radius + ", is: " + circle.getArea());
+            // console.log("Area of a circle with radius: " + this.radius + ", is: " + rounded);
         }
     };
 
 
-    console.log("Rounding Area: " + circle.logInfo());
-    console.log("Area: " + circle.getArea());
 // log info about the circle
     console.log("Raw circle information");
     circle.logInfo(false);
