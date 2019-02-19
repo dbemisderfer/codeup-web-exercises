@@ -12,10 +12,13 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    // var person = {
-    //     firstName: "Dwight",
-    //     lastName: "Bemisderfer"
-    // };
+    var person = {
+        firstName: "Dwight",
+        lastName: "Bemisderfer",
+        sayHello: function () {
+            return "Hello from " + this.firstName + " " + this.lastName + "!";
+        }
+    };
 
     /**
      * TODO:
@@ -27,11 +30,12 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    // Alternate method (but not preferred)
     // person.sayHello = function () {
-    //     return "Hello from " + person.firstName + " " + person.lastName
+    //     return "Hello from " + this.firstName + " " + this.lastName + "!";
     // };
-    //
-    // console.log(person.sayHello());
+
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -83,67 +87,69 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Moby Dick",
-            author: {
-                firstName: "Herman",
-                lastName: "Melville"
-            }
-        },
-        {
-            title: "Rock Albums of the '70s: A Critical Guide",
-            author: {
-                firstName: "Robert",
-                lastName: "Christgau"
-            }
+    // var books = [
+    //     {
+    //         title: "Moby Dick",
+    //         author: {
+    //             firstName: "Herman",
+    //             lastName: "Melville"
+    //         }
+    //     },
+    //     {
+    //         title: "Rock Albums of the '70s: A Critical Guide",
+    //         author: {
+    //             firstName: "Robert",
+    //             lastName: "Christgau"
+    //         }
+    //
+    //     },
+    //     {
+    //         title: "Revelation",
+    //         author: {
+    //             firstName: "John",
+    //             lastName: "'the Revelator'"
+    //         }
+    //
+    //     },
+    //     {
+    //         title: "On the Banks of Plum Creek",
+    //         author: {
+    //             firstName: "Laura",
+    //             lastName: "Wilder"
+    //         }
+    //
+    //     },
+    //     {
+    //         title: "The Secret of the Old Mill",
+    //         author: {
+    //             firstName: "Franklin",
+    //             lastName: "Dixon"
+    //         }
+    //     }
+    // ];
 
-        },
-        {
-            title: "Revelation",
-            author: {
-                firstName: "John",
-                lastName: "'the Revelator'"
-            }
-
-        },
-        {
-            title: "On the Banks of Plum Creek",
-            author: {
-                firstName: "Laura",
-                lastName: "Wilder"
-            }
-
-        },
-        {
-            title: "The Secret of the Old Mill",
-            author: {
-                firstName: "Franklin",
-                lastName: "Dixon"
-            }
-        }
-    ];
 //
 //     console.log(JSON.stringify(books));
 //
-    function createBook(title, firstName, lastName) {
-
-             return books.push({
-            "title": title,
-            "author": {
-                firstName: firstName,
-                lastName: lastName
-            }
-        });
-    };
+//     ****** Alternate method ******
+//     function createBook(title, firstName, lastName) {
+//
+//              return books.push({
+//             "title": title,
+//             "author": {
+//                 firstName: firstName,
+//                 lastName: lastName
+//             }
+//         });
+//     };
 //
 //
 // createBook("The Hidden Staircase", "Carolyn", "Keene");
 //     console.log(JSON.stringify(books));
-//
-//     // console.log(books[3].title);
-//     // console.log(books[4].author.firstName);
-//     // console.log(books[2].author.lastName);
+// //
+// //     // console.log(books[3].title);
+// //     // console.log(books[4].author.firstName);
+// //     // console.log(books[2].author.lastName);
 
     /**
      * TODO:
@@ -177,8 +183,8 @@
     //     console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
     //     console.log("-------");
     // }
-
-    // Alternate method
+    //
+    // // Alternate method
     // books.forEach(function(book, index){
     //
     //     console.log("Book # " + (index + 1));
@@ -187,6 +193,7 @@
     //     console.log("-------");
     //
     // });
+
 
     /**
      * Bonus:
@@ -199,63 +206,38 @@
      *   `showBookInfo` function.
      */
 
-
     function createBook(title, firstName, lastName) {
-        return library.books.push({
-            "title": title,
-            "author": {
-                firstName: firstName,
-                lastName: lastName
-            }
-        });
+        var book = {};
+        book.title = title
+        book.author = {};
+        book.author.firstName = firstName;
+        book.author.lastName = lastName;
+
+        return book;
+
     };
 
-    var library = {
-        books: [
-            {
-            title: "Moby Dick",
-            author: {
-                firstName: "Herman",
-                lastName: "Melville"
-                }
-            },
-            {
-                title: "Rock Albums of the '70s: A Critical Guide",
-                    author: {
-                firstName: "Robert",
-                    lastName: "Christgau"
-                }
+    var books = [
+        createBook("The Second Coming of the New Age", "Josh", "Peck"),
+        createBook("Last Clash of the Titans", "Derek", "Gilbert"),
+        createBook("The Gods at Ground Zero", "Carl", "Gallups")
+    ];
 
-            },
-            {
-                title: "Revelation",
-                    author: {
-                firstName: "John",
-                    lastName: "'the Revelator'"
-                }
+    books.unshift(createBook("The Late, Great Planet Earth", "Hal", "Lindsey"));
+    books.push(createBook("The Amazing Spider-Man", "Stan", "Lee"));
 
-            },
-            {
-                title: "On the Banks of Plum Creek",
-                    author: {
-                firstName: "Laura",
-                    lastName: "Wilder"
-                }
 
-            },
-            {
-                title: "The Secret of the Old Mill",
-                    author: {
-                firstName: "Franklin",
-                    lastName: "Dixon"
-                }
-            }],
-        addBook: createBook
-    }
+    // This function will be used inside of a forEach loop (see below), so it needs 'element, index, array' format
+    function showBookInfo(book, index) {
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("-------");
+    };
 
-    console.log((JSON.stringify(library.books)));
-    console.log(library.addBook("The Exorcist", "William", "Blatty"));
-    console.log(JSON.stringify(library.books));
+    books.forEach(showBookInfo);
+
+
 
 //     BONUS 1 (expanding on the books object exercise):
 // Add a property "keywords" that contains an array of possible genres the book may be categorized by
