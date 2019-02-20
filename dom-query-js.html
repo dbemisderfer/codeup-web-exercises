@@ -33,66 +33,105 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById('main-header');
-        console.log(mainHeader);
+        // var mainHeader = document.getElementById('main-header');
+        // console.log(mainHeader);
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById('sub-header');
-        console.log(subHeader);
-
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
-
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
-        console.log("listItems: ");
-        console.log(listItems);
-
-        // TODO: Set text color on every other list item to grey
-        // TODO: Set text color of li with dbid = 1 to blue
+        // // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        // mainHeader.innerHTML = "JavaScript is Cool";
         //
-        for (var i = 0; i < listItems.length; i++) {
-            // Instructor method
-            var dbId = listItems[i].getAttribute("data-dbid");
-            console.log(dbId);
+        // // TODO: Uncomment the next line and get the sub header element by id
+        // var subHeader = document.getElementById('sub-header');
+        // console.log(subHeader);
+        //
+        // // TODO: Set the text color of subHeader to blue
+        // subHeader.style.color = "blue";
+        //
+        // // TODO: Uncomment the next line and get all list items
+        // var listItems = document.getElementsByTagName('li');
+        // console.log("listItems: ");
+        // console.log(listItems);
+        //
+        // // TODO: Set text color on every other list item to grey
+        // // TODO: Set text color of li with dbid = 1 to blue
+        // //
+        // for (var i = 0; i < listItems.length; i++) {
+        //     // Instructor method
+        //     var dbId = listItems[i].getAttribute("data-dbid");
+        //     console.log(dbId);
+        //
+        //     if (dbId == 1) {
+        //         listItems[i].style.color = "blue";
+        //     } else if (i % 2 === 1) {
+        //         listItems[i].style.color = "grey";
+        //     }
+        //     // var dbId = listItems[i].getAttribute("data-dbid");
+        //     // console.log(dbId);
+        //     //
+        //     // if (i % 2 != 0) {
+        //     //     listItems[i].style.color = "grey";
+        //     // } else if (dbId == 1) {
+        //     //     listItems[i].style.color = "blue";
+        //     // }
+        // }
+        //
+        // // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        // var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        // console.log(subParagraphs);
+        //
+        // // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        // subParagraphs[0].innerText = "Mission Accomplished!";
 
-            if (dbId == 1) {
-                listItems[i].style.color = "blue";
-            } else if (i % 2 === 1) {
-                listItems[i].style.color = "grey";
-            }
-            // var dbId = listItems[i].getAttribute("data-dbid");
-            // console.log(dbId);
-            //
-            // if (i % 2 != 0) {
-            //     listItems[i].style.color = "grey";
-            // } else if (dbId == 1) {
-            //     listItems[i].style.color = "blue";
-            // }
-        }
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
-        console.log(subParagraphs);
+        // Ex. Clicking on Item 1
+        // var listItem = document.getElementsByTagName('li');
+        // console.log(listItem);
+        // var listItemOne = listItem[0];
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        // // OR (alternate method).......
+        // var listItem = document.getElementsByTagName('li')[0];
+        // console.log(listItem);
+
+        // console.log(listItemOne);
+        // console.log(listItemOne.innerHTML);
+        // var listItemClick = function(event) {
+        //     console.log(listItemOne.innerHTML);
+        // };
+        // listItemOne.addEventListener('click', listItemClick, false);
 
 
+        // Ex. Clicking on Main Header
+        // var popup = function (event) {
+        //     alert('You clicked the heading!')
+        // };
+        //
+        // var heading = document.getElementById('main-header')
+        //
+        // heading.addEventListener('click', popup, false);
 
+        var buttonOne = document.getElementById('btn1');
+        var mainHeader = document.getElementById('main-header');
+        var changeMainHeader = function(event) {
+            mainHeader.innerHTML = "Javascript is Cool"
+        };
+
+        buttonOne.addEventListener('click', changeMainHeader, false);
+
+        // ************ Alternate method ******************
         // var listenerOne = function (event) {
         //     var mainHeader = document.getElementById('main-header');
         //     mainHeader.innerHTML = "JavaScript is Cool";
         // }
         //
         // document.getElementById('btn1').addEventListener('click', listenerOne, false);
-        //
-        //
-        // })();
-        //
+
+        var buttonTwo = document.getElementById('btn2');
+        var subHeader = document.getElementById('sub-header');
+        var changeSubHeader = function(event) {
+            subHeader.style.color = "blue";
+        }
+
+        buttonTwo.addEventListener('click', changeSubHeader, false);
+        // ************ Alternate method ******************
         // var listenerTwo = function (event) {
         //     var subHeader = document.getElementById('sub-header');
         //     subHeader.style.color = "blue";
@@ -100,7 +139,26 @@
         // }
         //
         // document.getElementById('btn2').addEventListener('click', listenerTwo, false);
-        //
+
+        var buttonThree = document.getElementById('btn3');
+        var listItems = document.getElementsByTagName('li');
+        var changeListItems = function(event) {
+            for (var i = 0; i < listItems.length; i++) {
+                // Instructor method
+                var dbId = listItems[i].getAttribute("data-dbid");
+
+                if (dbId == 1) {
+                    listItems[i].style.color = "blue";
+                } else if (i % 2 === 1) {
+                    listItems[i].style.color = "grey";
+                }
+            }
+
+        }
+
+
+        buttonThree.addEventListener('click', changeListItems, false);
+
         // var listenerThree = function (event) {
         //     var listItems = document.getElementsByTagName('li');
         //     for (var i = 0; i < listItems.length; i++) {
@@ -116,7 +174,15 @@
         // }
         //
         // document.getElementById('btn3').addEventListener('click', listenerThree, false);
-        //
+
+        var buttonFour = document.getElementById('btn4');
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        var changeInnerText = function(event) {
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        }
+
+        buttonFour.addEventListener('click', changeInnerText, false);
+
         // var listenerFour = function (event) {
         //     var subParagraphs = document.getElementsByClassName('sub-paragraph');
         //     subParagraphs[0].innerHTML = "Mission Accomplished!";
