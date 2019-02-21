@@ -36,6 +36,15 @@
 //
 // console.log(giveRandomDay());
 
+// Instructor solution
+// function randomDay(){
+//     var days = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
+//     var random = (Math.floor(Math.random() * 7) + 1) - 1;
+//     return days[random];
+// }
+//
+// console.log(randomDay());
+
 
 
 // 3.  Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
@@ -75,11 +84,43 @@ var biblebooks = ['Genesis', 'Deuteronomy', 'Job', 'Isaiah', 'Ruth'];
 var lengths = biblebooks.map(function(element){
     return element.length
 })
+console.log(lengths);
 
-var lengths_string = lengths.join(',');
+// lengths = lengths.join(',');
+// console.log(lengths);
 
-var longestString =  Math.max(lengths.join(','));
+var longestString =  Math.max(lengths);
+console.log(longestString);
 
+
+// Alternate solution (Adrien VL)
+// var testArray = ['hell6', 'hiii', 'b', 'goodbye121212'];
+//
+// function longestStringFunction(array){
+//
+//
+//     var longestString = array[0].length;
+//
+//
+//     for(var i = 1; i < array.length; i++){
+//
+//
+//         if(array[i].length > longestString) {
+//
+//
+//             longestString = array[i];
+//             return longestString;
+//
+//         }
+//
+//     }
+//
+//     return array[0];
+//
+//
+// }
+//
+// console.log(longestStringFunction(testArray));
 
 
 
@@ -95,6 +136,7 @@ var longestString =  Math.max(lengths.join(','));
 
 // ====================ARRAYS=====================-
 // 6.	Write a function that returns the sum of an array of numbers
+
 
 
 
