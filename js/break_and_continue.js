@@ -12,7 +12,7 @@
 //     if (x == r) {
 //         console.log("Yikes! Skipping number: " + x);
 //         continue;
-//     } console.log(x);
+//     } console.log("Here is an odd number: " + x);
 // }
 
 // Instructor example
