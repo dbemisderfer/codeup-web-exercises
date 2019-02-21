@@ -1,6 +1,9 @@
 
 
+var storeItems = [];
+    prompt('Enter grocery store item.');
 
+console.log(storeItems);
 
 
 
