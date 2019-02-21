@@ -49,7 +49,16 @@
     // favorite number. Also create a MyMath.roundPi(digits) which returns PI rounded to
     // a given number of digits.
 
+    var myMath = {
+        randomCircle = function() {
+
+        }
+    };
+
+    Math.floor(Math.random() * (10) + 1);
     // Add a MyMath.randomCircle() method which picks a random radius and writes output
     // similar to “A circle of radius 47 has an area of 6939.77”
+
+
 
 // })();
