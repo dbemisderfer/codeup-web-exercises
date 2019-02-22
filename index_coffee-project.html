@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="style_coffee-project.css">
+    <link rel="stylesheet" href="css/style_coffee-project.css">
 </head>
 <body>
 <div class = "container text-center" >
@@ -59,8 +59,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="Coffee Search">Coffee Name</label>
-                    <input class="form-control" type="search" aria-label="Search">
+                    <label for="coffee_search">Coffee Name</label>
+                    <input id="coffee_search" class="form-control" type="text" list="datalist" onkeyp>
                 </div>
                 <button class="btn btn-primary btn-block mt-2 " type="button">Submit</button>
             </form>
@@ -79,8 +79,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="Coffee Search">Name</label>
-                    <input class="form-control" type="search" aria-label="Search">
+                    <label for="coffee_search">Name</label>
+                    <input id="coffee_search" class="form-control" type="search" aria-label="Search">
                 </div>
                 <button class="btn btn-primary btn-block mt-2 " type="button">Submit</button>
             </form>
@@ -101,6 +101,6 @@
 
 
 
-<script src="main_coffee-project.js"></script>
+<script src="js/main_coffee-project.js"></script>
 </body>
 </html>
