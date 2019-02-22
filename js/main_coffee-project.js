@@ -8,12 +8,6 @@ function renderCoffee(coffee) {
     html += '<p class="coffeeNameId ml-2 my-auto pt-1 text-muted">' + coffee.roast + '</p>';
     html += '</div>';
     html += '</div>';
-    // html += '<div class="col">';
-    // html += '<div class="justify-content-start d-flex flex-row">';
-    // html += '<h2>' + coffee.name + '</h2>';
-    // html += '<p class="ml-2 my-auto pt-1 text-muted">' + coffee.roast + '</p>';
-    // html += '</div>';
-    // html += '</div>';
     html += '</div>';
 
     return html;
@@ -39,14 +33,6 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-var output= document.getElementsByClass("coffeeNameId");
-var formInput = document.getElementById("coffee_search"").innerHTML;
-output.value = "";
-for (var i = 0; i<coffees.length; i++) {
-    if coffees[i].name == formInput {
-        output.value +=
-    }
-}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
