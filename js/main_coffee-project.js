@@ -4,8 +4,8 @@ function renderCoffee(coffee) {
     var html = '<div class="row coffee">';
     html += '<div class="col">';
     html += '<div class="justify-content-start d-flex flex-row">';
-    html += '<h2 class="coffeeNameId">' + coffee.name + '</h2>';
-    html += '<p class="coffeeNameId ml-2 my-auto pt-1 text-muted">' + coffee.roast + '</p>';
+    html += '<h2>' + coffee.name + '</h2>';
+    html += '<p class="ml-2 my-auto pt-1 text-muted">' + coffee.roast + '</p>';
     html += '</div>';
     html += '</div>';
     html += '</div>';
@@ -28,13 +28,14 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (selectedRoast === "all") {
+            filteredCoffees.push(coffee)
         }
+
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -56,6 +57,10 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
+
+
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+document.getElementById('roast-selection').addEventListener('change', updateCoffees);
