@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Mapbox Mini 3</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
 </head>
 <body>
 
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- JS Key -->
+<script src='js/keys.js'></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxAccessToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 12,
+        center: {lng: -77.0502, lat: 38.8893} // Use object (instead of array) to place coords
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat(map.getCenter()) //use getCenter instead of typing coords over again
+        .addTo(map);
+
+    var lincolnPopup = new mapboxgl.Popup();
+        lincolnPopup.setText("Lincoln Memorial");
+        marker.setPopup(lincolnPopup);
+
+</script>
 </body>
 </html>

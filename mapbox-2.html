@@ -32,12 +32,14 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 12,
-        center: [-77.0502, 38.8893]
+        center: {lng: -77.0502, lat: 38.8893} // Use object (instead of array) to place coords
     });
 
     var marker = new mapboxgl.Marker()
-        .setLngLat([-77.0502, 38.8893])
+        .setLngLat(map.getCenter()) //use getCenter instead of typing coords over again
         .addTo(map);
+
+
 </script>
 </body>
 </html>
