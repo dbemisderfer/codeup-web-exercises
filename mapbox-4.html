@@ -42,7 +42,7 @@
         var zion = geocode("Zion National Park", mapboxAccessToken).then(function(result) {
             console.log(result);
             map.setCenter(result);
-            // map.setZoom(20);
+            map.setZoom(9);
         });
         }, 5000);
 
@@ -55,7 +55,7 @@
             geocode(results, mapboxAccessToken).then(function(data) {
                 console.log(data);
                 map.setCenter(data);
-                // map.setZoom(20);
+                map.setZoom(9);
             });
         });
 
