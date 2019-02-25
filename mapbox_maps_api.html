@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox API Exercise</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<!-- JS Key -->
+<script src='js/keys.js'></script>
+<!-- Geocoder JS -->
+<script src='js/mapbox-geocoder-utils.js'></script>
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxAccessToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: {lng: -98.4896, lat: 29.4266} // Use object (instead of array) to place coords
+    });
+
+    var favoriteRestaurants = [
+        {
+            name: "Regio Cafe",
+            type: "Mexican",
+            location: "McCullough Ave, San Antonio, TX"
+        },
+        {
+            name: "Tycoon Flats Restaurant",
+            type: "American",
+            location: "North Saint Mary's Street, San Antonio"
+        },
+        {
+            name: "Good Time Charlie's",
+            type: "American",
+            location: "Broadway St, San Antonio, TX"
+        }
+
+    ];
+
+    favoriteRestaurants.forEach(function(favoriteRestaurant) {
+
+        var restaurant = favoriteRestaurant.name + "," + favoriteRestaurant.location;
+        var restaurantInfo = favoriteRestaurant.type;
+        geocode(restaurant, mapboxAccessToken).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(20);
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(map.getCenter()).addTo(map);
+            map.setZoom(15);
+
+            var popup = new mapboxgl.Popup()
+            popup.setText(restaurantInfo);
+            marker.setPopup(popup);
+
+        });
+    })
+
+
+
+
+
+
+
+    // var timeoutId1 = setTimeout(function () {
+    //     // the  geocode method from mapbox-geocoder-utils.js
+    //     var zion = geocode("Zion National Park", mapboxAccessToken).then(function(result) {
+    //         console.log(result);
+    //         map.setCenter(result);
+    //         map.setZoom(9);
+    //     });
+    // }, 5000);
+    //
+    //
+    // var timeoutId2 = setTimeout(function () {
+    //     // reverse geocode method from mapbox-geocoder-utils.js
+    //     var honolulu = reverseGeocode({lng: -157.85833, lat: 21.30694}, mapboxAccessToken).then(function(results) {
+    //         // logs the address for The Alamo
+    //         console.log(results);
+    //         geocode(results, mapboxAccessToken).then(function(data) {
+    //             console.log(data);
+    //             map.setCenter(data);
+    //             map.setZoom(9);
+    //         });
+    //     });
+    //
+    // }, 10000);
+
+
+
+
+
+</script>
+</body>
+</html>
