@@ -19,10 +19,11 @@
 
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src='js/keys.js'></script>
 <script>
     'use strict';
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGJlbWlzZGVyZmVyIiwiYSI6ImNqc2ttZms4ZTE5aGg0M3BsZ3ozZmxiNXYifQ.2Da8kjWHMnMGrOe2ytYkFA';
+    mapboxgl.accessToken = mapboxAccessToken;
     var map = new mapboxgl.Map({
 
         container: 'map',
