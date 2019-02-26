@@ -5,70 +5,72 @@
     <title>Title</title>
 </head>
 <body>
-<script type="text/javascript">
-    var tags = [
-        "Delhi",
-        "Ahemdabad",
-        "Punjab",
-        "Uttar Pradesh",
-        "Himachal Pradesh",
-        "Karnatka",
-        "Kerela",
-        "Maharashtra",
-        "Gujrat",
-        "Rajasthan",
-        "Bihar",
-        "Tamil Nadu",
-        "Haryana"
-    ];
 
-    /*list of available options*/
-    var n= tags.length; //length of datalist tags
 
-    function ac(value) {
-        document.getElementById('datalist').innerHTML = '';
-        //setting datalist empty at the start of function
-        //if we skip this step, same name will be repeated
+<!--<script type="text/javascript">-->
+    <!--var tags = [-->
+        <!--"Delhi",-->
+        <!--"Ahemdabad",-->
+        <!--"Punjab",-->
+        <!--"Uttar Pradesh",-->
+        <!--"Himachal Pradesh",-->
+        <!--"Karnatka",-->
+        <!--"Kerela",-->
+        <!--"Maharashtra",-->
+        <!--"Gujrat",-->
+        <!--"Rajasthan",-->
+        <!--"Bihar",-->
+        <!--"Tamil Nadu",-->
+        <!--"Haryana"-->
+    <!--];-->
 
-        var l=value.length;
-        //input query length
-        for (var i = 0; i<n; i++) {
-            if(((tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1)
-            {
-                //comparing if input string is existing in tags[i] string
+    <!--/*list of available options*/-->
+    <!--var n= tags.length; //length of datalist tags-->
 
-                var node = document.createElement("option");
-                var val = document.createTextNode(tags[i]);
-                node.appendChild(val);
+    <!--function ac(value) {-->
+        <!--document.getElementById('datalist').innerHTML = '';-->
+        <!--//setting datalist empty at the start of function-->
+        <!--//if we skip this step, same name will be repeated-->
 
-                document.getElementById("datalist").appendChild(node);
-                //creating and appending new elements in data list
-            }
-        }
-    }
+        <!--var l=value.length;-->
+        <!--//input query length-->
+        <!--for (var i = 0; i<n; i++) {-->
+            <!--if(((tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1)-->
+            <!--{-->
+                <!--//comparing if input string is existing in tags[i] string-->
 
-</script>
+                <!--var node = document.createElement("option");-->
+                <!--var val = document.createTextNode(tags[i]);-->
+                <!--node.appendChild(val);-->
 
-<input type="text" list="datalist" onkeyup="ac(this.value)">
-<!-- On keyup calls the function everytime a key is released -->
-<datalist id="datalist">
+                <!--document.getElementById("datalist").appendChild(node);-->
+                <!--//creating and appending new elements in data list-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
 
-    <!--<option value="Delhi"></option>-->
-    <!--<option value="Ahemdabad"></option>-->
-    <!--<option value="Punjab"></option>-->
-    <!--<option value="Uttar Pradesh"></option>-->
-    <!--<option value="Himachal Pradesh"></option>-->
-    <!--<option value="Karnatka"></option>-->
-    <!--<option value="Kerela"></option>-->
-    <!--<option value="Maharashtra"></option>-->
-    <!--<option value="Gujrat"></option>-->
-    <!--<option value="Rajasthan"></option>-->
-    <!--<option value="Bihar"></option>-->
-    <!--<option value="Tamil Nadu"></option>-->
-    <!--<option value="Haryana"></option>-->
+<!--</script>-->
 
-    <!-- This data list will be edited through javascript     -->
-</datalist>
+<!--<input type="text" list="datalist" onkeyup="ac(this.value)">-->
+<!--&lt;!&ndash; On keyup calls the function everytime a key is released &ndash;&gt;-->
+<!--<datalist id="datalist">-->
+
+    <!--&lt;!&ndash;<option value="Delhi"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Ahemdabad"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Punjab"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Uttar Pradesh"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Himachal Pradesh"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Karnatka"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Kerela"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Maharashtra"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Gujrat"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Rajasthan"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Bihar"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Tamil Nadu"></option>&ndash;&gt;-->
+    <!--&lt;!&ndash;<option value="Haryana"></option>&ndash;&gt;-->
+
+    <!--&lt;!&ndash; This data list will be edited through javascript     &ndash;&gt;-->
+<!--</datalist>-->
 
 </body>
 </html>
