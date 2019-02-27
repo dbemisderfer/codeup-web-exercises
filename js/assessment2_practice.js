@@ -1,8 +1,43 @@
 
 "use strict";
+// Write a function, filterNumbers() that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
+//     Example input: ["fred", true, 5, 3]
+// Example output: [3, 5]
+var arr = ["fred", true, 5, 3];
 
-// var inputs = ["fred", true, 5, 3];
-// // function filterNumbers() {
+// Instructor solution
+
+// function filterNumbers(arr) {
+//     var output = [];
+//     //
+//     // !!!!!!!!!  FUNCTION TEMPLATE  !!!!!!!!!
+//     //
+//     return output;
+// }
+
+function filterNumbers(arr) {
+    var output = [];
+
+    // loop through array and delete non-numbers
+
+    for (var i = 0; i < arr.length; i += 1) {
+        console.log(arr[i]);
+        if (typeof arr[i] === "number") {
+            output.push(arr[i]);
+        }
+
+        // arrange number in chronological order
+        output.sort();
+    }
+
+    return output;
+}
+
+console.log(filterNumbers(["fred", true, 5, 3]))
+
+
+// My mess
+// function filterNumbers() {
 // var newArray = [];
 // console.log(newArray);
 // inputs.forEach(function(input, i) {
@@ -163,3 +198,21 @@ function makeSandwichObjects(breads, fillings) {
 console.log(makeSandwichObjects(breads, fillings));
 
 
+// // for vs. forEach
+//
+// names.forEach(function(name) {
+//     console.log(name);
+// });
+//
+// for (var i = 0; i < names.length; i += 1) {
+//     console.log(names[i]);
+// }
+//
+// // while - unknown number of iterations and the iteration is based on some condition
+//
+// do {
+//     console.log(names[i]);
+//     i += 1;
+// } while (i < names.length) {
+//
+// }
