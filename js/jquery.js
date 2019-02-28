@@ -6,16 +6,15 @@ $(document).ready(function() {
     // $(document).keyup(function(event){
     //     console.log(event.keyCode);
     // });
-
+    var enterCode = [];
     $(document).keydown(function(event) {
-        var enterCode = [];
+
         // console.log(event.keyCode);
         if (event.keyCode === 13 || 37 || 38 || 39 || 40 || 65 || 66) {
             enterCode.push(event.keyCode);
             console.log(enterCode);
         } else {
             enterCode.pop();
-            console.log(enterCode);
         }
 
 
