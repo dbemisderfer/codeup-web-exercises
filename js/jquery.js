@@ -6,44 +6,40 @@ $(document).ready(function() {
     // var codes = "3838404037393739666513";
 
 
-        // var codes = "38384013";
-        //
-        // var enterCode = "";
-        // $(document).keyup(function(event) {
-        //
-        //     enterCode += ("" + event.keyCode);
-        //     // console.log(enterCode);
-        //     if (enterCode === codes) {
-        //         alert('Good Job!');
-        //     }
-        //     // console.log(codes.indexOf(enterCode))
-        //     if (!codes.indexOf(enterCode)) return;
-        //     // console.log(enterCode);
-        //     enterCode = "";
-        //     console.log(enterCode);
+    // var codes = "38384013";
+    //
+    // var enterCode = "";
+    // $(document).keyup(function(event) {
+    //
+    //     enterCode += ("" + event.keyCode);
+    //     // console.log(enterCode);
+    //     if (enterCode === codes) {
+    //         alert('Good Job!');
+    //     }
+    //     // console.log(codes.indexOf(enterCode))
+    //     if (!codes.indexOf(enterCode)) return;
+    //     // console.log(enterCode);
+    //     enterCode = "";
+    //     console.log(enterCode);
 
 
-        // var codes = "38384040";
+    // var codes = "38384040";
 
+    var codes = "37393739";
 
-        var codes = "37393739";
+    var enterCode = "";
 
-        var enterCode = "";
+    $(document).keyup(function(event) {
 
-        $('#textfield2').keydown(function(event) {
-            event.preventDefault();
-            enterCode += event.keyCode;
-            console.log(enterCode);
-            if (enterCode === codes) {
-                alert('Good Job!');
-            } else if (!codes.indexOf(enterCode)) {
-
-                return;
-            }
-
-            enterCode = "";
-
-            // // console.log(enterCode);
+        enterCode += event.keyCode;
+        console.log(enterCode);
+        if (enterCode === codes) {
+            alert('Good Job!');
+        } else if (!codes.indexOf(enterCode)) {
+            return;
+        }
+        enterCode = "";
+        // // console.log(enterCode);
 
 
 
