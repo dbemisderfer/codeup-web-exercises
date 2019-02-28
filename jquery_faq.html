@@ -7,6 +7,9 @@
         .hiddenText {
             visibility: hidden;
         }
+        .highlighted {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -36,34 +39,7 @@
 
 </dl>
 
-<a href="#" id="toggle">Click to view the locations of all of these national parks!</a>
-
-<!--<h1 id="codeup">Hello Codeup</h1>-->
-
-<!--<h1 id="main-header">Header One</h1>-->
-<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
-<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
-<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
-
-<!--<div id="container">-->
-    <!--<ul id="codeup">-->
-        <!--<li>First Item</li>-->
-        <!--<li>Second Item</li>-->
-        <!--<li>Third Item</li>-->
-        <!--<li>Fourth Item</li>-->
-    <!--</ul>-->
-<!--</div>-->
-
-<!--<div id="hello">-->
-    <!--<ul class="codeup">-->
-        <!--<li>First Thing</li>-->
-        <!--<li>Second Thing</li>-->
-        <!--<li>Third Thing</li>-->
-        <!--<li>Fourth Thing</li>-->
-    <!--</ul>-->
-<!--</div>-->
-
-
+<a href="#" id="disappearReappear">Click to view the locations of all of these national parks!</a>
 
 
 <script src="js/jquery-3.3.1.js"></script>
@@ -71,11 +47,20 @@
 <!--<script src="js/jquery_faq.js"></script>-->
 <script>
     $(document).ready(function() {
-        $('#toggle').click(function(event) {
+        $('#disappearReappear').click(function(event) {
             event.preventDefault();
             $('.invisible').toggleClass('hiddenText');
         })
     });
+
+    $()
+
+    $('dt').click(function(event) {
+        // $(this).addClass('highlighted');
+        $(this).toggleClass('highlighted');
+    })
+
+
 
 </script>
 
