@@ -23,20 +23,26 @@ $(document).ready(function() {
         //     console.log(enterCode);
 
 
-        var codes = "38384040";
+        // var codes = "38384040";
+
+
+        var codes = "37393739";
 
         var enterCode = "";
 
-        $(document).keyup(function(event) {
-
+        $('#textfield2').keydown(function(event) {
+            event.preventDefault();
             enterCode += event.keyCode;
             console.log(enterCode);
             if (enterCode === codes) {
                 alert('Good Job!');
             } else if (!codes.indexOf(enterCode)) {
+
                 return;
             }
+
             enterCode = "";
+
             // // console.log(enterCode);
 
 
