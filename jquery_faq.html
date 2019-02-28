@@ -14,56 +14,87 @@
 </head>
 <body>
 
+    <button id="button1" type="submit">Press here, please.</button>
 
-<dl>
-    <dt>Zion</dt>
-    <dd class="invisible hiddenText">Located in Utah</dd>
-    <dt>Yosemite</dt>
-    <dd class="invisible hiddenText">Located in California</dd>
-    <dt>Yellowstone</dt>
-    <dd class="invisible hiddenText">Located in Wyoming</dd>
-    <dt>Glacier</dt>
-    <dd class="invisible hiddenText">Located in Montana</dd>
-    <dt>Joshua Tree</dt>
-    <dd class="invisible hiddenText">Located in California</dd>
-    <dt>Grand Teton</dt>
-    <dd class="invisible hiddenText">Located in Wyoming</dd>
-    <dt>Sequoia</dt>
-    <dd class="invisible hiddenText">Located in California</dd>
-    <dt>Acadia</dt>
-    <dd class="invisible hiddenText">Located in Maine</dd>
-    <dt>Great Smoky Mountains</dt>
-    <dd class="invisible hiddenText">Located in Tennessee and North Carolina</dd>
-    <dt>Everglades</dt>
-    <dd class="invisible hiddenText">Located in Florida</dd>
+    <h3>Blue Ridge Parkway</h3>
+        <ul id="cross-state-parks" class="parks">
+            <li>Borders both the Great Smoky Mountains and Shenandoah National Park.</li>
+            <li>Offers stunning views of Appalachia.</li>
+            <li>Stretches 469 miles along the crest of the Blue Ridge Mountains through North Carolina and Virginia.</li>
+            <li>Fall leaf peeping is a hugely popular activity along the Parkway, as are hiking and wildlife viewing.</li>
+        </ul>
+    <h3>Gettysburg National Military Park</h3>
+        <ul id="pennsylvania" class="parks">
+            <li>Site of the largest battle ever waged during the American Civil War.</li>
+            <li>Where Lincoln delivered the Gettysburg Address.</li>
+            <li>Located 50 miles northwest of Baltimore, Maryland.</li>
+            <li>Its' cemetery contains more than 7,000 interments, including over 3,500 from the Civil War.</li>
+        </ul>
+    <h3>Fort McHenry National Monument and Historic Shrine</h3>
+        <ul id="maryland" class="parks">
+            <li>Francis Scott Key wrote "The Star-Spangled Banner" here during the Battle of Baltimore, September 13-14, 1814.</li>
+            <li>During the War of 1812, defenders of Fort McHenry stopped the British advance on Baltimore and helped to preserve the United States.</li>
+            <li>Remained an active military post, off and on, for nearly 100 years after the War of 1812.</li>
+            <li>Popular tourist attraction in the Baltimore, MD area.</li>
+        </ul>
 
-</dl>
 
-<a href="#" id="disappearReappear">Click to view the locations of all of these national parks!</a>
+<!--<dl>-->
+    <!--<dt>Zion</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Utah</dd>-->
+    <!--<dt>Yosemite</dt>-->
+    <!--<dd class="invisible hiddenText">Located in California</dd>-->
+    <!--<dt>Yellowstone</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
+    <!--<dt>Glacier</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Montana</dd>-->
+    <!--<dt>Joshua Tree</dt>-->
+    <!--<dd class="invisible hiddenText">Located in California</dd>-->
+    <!--<dt>Grand Teton</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
+    <!--<dt>Sequoia</dt>-->
+    <!--<dd class="invisible hiddenText">Located in California</dd>-->
+    <!--<dt>Acadia</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Maine</dd>-->
+    <!--<dt>Great Smoky Mountains</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Tennessee and North Carolina</dd>-->
+    <!--<dt>Everglades</dt>-->
+    <!--<dd class="invisible hiddenText">Located in Florida</dd>-->
+
+<!--</dl>-->
+
+<!--<a href="" id="disappearReappear">Click to view the locations of all of these national parks!</a>-->
 
 
 <script src="js/jquery-3.3.1.js"></script>
 <!--<script src="http://code.jquery.com/jquery-3.3.1.js"></script>-->
-<!--<script src="js/jquery_faq.js"></script>-->
+<script src="js/jquery_faq.js"></script>
+<!--<script>-->
+    <!--$(document).ready(function() {-->
+        <!--$('#disappearReappear').click(function(event) {-->
+            <!--event.preventDefault(); // Removing "#" from href prevents anchor link from sending you back to top of page-->
+            <!--$('.invisible').toggleClass('hiddenText');-->
+        <!--})-->
+    <!--});-->
+
+    <!--$()-->
+
+    <!--$('dt').click(function(event) {-->
+        <!--// $(this).addClass('highlighted');-->
+        <!--$(this).toggleClass('highlighted');-->
+    <!--})-->
+
+
+
+<!--</script>-->
+
 <script>
-    $(document).ready(function() {
-        $('#disappearReappear').click(function(event) {
-            event.preventDefault();
-            $('.invisible').toggleClass('hiddenText');
-        })
+    $('#button1').click(function() {
+        $("ul li:last-child").css('background', 'yellow');
     });
-
-    $()
-
-    $('dt').click(function(event) {
-        // $(this).addClass('highlighted');
-        $(this).toggleClass('highlighted');
-    })
-
-
+    // $('#national-parks-heading').next().css('background-color', 'salmon');
 
 </script>
-
 
 </body>
 </html>
