@@ -2,9 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JQuery Exercises</title>
+    <style>
+        .hiddenText {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
+
+
+<dl>
+    <dt>Zion</dt>
+    <dd class="invisible hiddenText">Located in Utah</dd>
+    <dt>Yosemite</dt>
+    <dd class="invisible hiddenText">Located in California</dd>
+    <dt>Yellowstone</dt>
+    <dd class="invisible hiddenText">Located in Wyoming</dd>
+    <dt>Glacier</dt>
+    <dd class="invisible hiddenText">Located in Montana</dd>
+    <dt>Joshua Tree</dt>
+    <dd class="invisible hiddenText">Located in California</dd>
+    <dt>Grand Teton</dt>
+    <dd class="invisible hiddenText">Located in Wyoming</dd>
+    <dt>Sequoia</dt>
+    <dd class="invisible hiddenText">Located in California</dd>
+    <dt>Acadia</dt>
+    <dd class="invisible hiddenText">Located in Maine</dd>
+    <dt>Great Smoky Moun hiddenTexttains</dt>
+    <dd class="invisible hiddenText">Located in Tennessee and North Carolina</dd>
+    <dt>Everglades</dt>
+    <dd class="invisible hiddenText">Located in Florida</dd>
+
+</dl>
+
+<a href="#" id="toggle">Click to view the locations of all of these national parks!</a>
+
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+<!--<h1 id="main-header">Header One</h1>-->
+<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
+<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
+<!--<p class="codeup">Lorem ipsum dolor sit amet.</p>-->
+
+<!--<div id="container">-->
+    <!--<ul id="codeup">-->
+        <!--<li>First Item</li>-->
+        <!--<li>Second Item</li>-->
+        <!--<li>Third Item</li>-->
+        <!--<li>Fourth Item</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<!--<div id="hello">-->
+    <!--<ul class="codeup">-->
+        <!--<li>First Thing</li>-->
+        <!--<li>Second Thing</li>-->
+        <!--<li>Third Thing</li>-->
+        <!--<li>Fourth Thing</li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<!--<script src="http://code.jquery.com/jquery-3.3.1.js"></script>-->
+<!--<script src="js/jquery_faq.js"></script>-->
+<script>
+    $(document).ready(function() {
+        $('#toggle').click(function(event) {
+            event.preventDefault();
+            $('.invisible').toggleClass('hiddenText');
+        })
+    });
+
+</script>
+
 
 </body>
 </html>
