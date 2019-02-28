@@ -25,11 +25,12 @@ $(document).ready(function() {
 
     // var codes = "38384040";
 
-    var codes = "37393739";
+    var codes = "37393739"; // left-right-left-right
 
     var enterCode = "";
 
-    $(document).keyup(function(event) {
+
+    $("#textfield2").keyup(function(event) {
 
         enterCode += event.keyCode;
         console.log(enterCode);
@@ -40,6 +41,18 @@ $(document).ready(function() {
         }
         enterCode = "";
         // // console.log(enterCode);
+
+    });
+
+    $("#textfield2").keydown(function(event) {
+        event.preventDefault();
+    });
+
+        // Use JOIN to turn arrays into strings and compare their values
+        // Ex. codes.join === enterCode.join
+
+
+
 
 
 
@@ -57,7 +70,7 @@ $(document).ready(function() {
         // }
 
 
-    });
+
 
     // $('#textfield').keydown(function(event) {
     //     var enterCode = [];
