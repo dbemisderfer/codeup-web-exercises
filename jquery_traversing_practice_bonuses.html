@@ -42,7 +42,7 @@
             <ol>
                 <li>LOTR</li>
                 <li>1984</li>
-                <li>20,000 Legues Under the Sea</li>
+                <li>20,000 Leagues Under the Sea</li>
                 <li>R is for Rocket</li>
                 <li>The War of the Worlds</li>
             </ol>
@@ -88,8 +88,10 @@
     // ========================= without traversal methods =========================
 
     // Highlight all sections
+    // $('section').css('background', 'orange');
 
     // Highlight all articles
+    // $('article').css('background', 'yellow');
 
 
 
@@ -97,23 +99,30 @@
     // ========================= .first() =========================
 
     // Highlight the first article
-
+    // $('article').first().css('background', 'yellow');
 
 
 
     // ========================= .last() =========================
 
     // Highlight the last article
-
+    // $('article').last().css('background', 'yellow');
 
 
 
     // ========================= .next() =========================
 
     // Highlight the second article
+    // $('article').first().next().css('background', 'yellow');
+
 
     // Highlight the third li of the entire page
+    // $('li').first().next().next().css('background', 'yellow');
 
+    // *********************************************
+    // ********** More efficient solution **********
+    // *********************************************
+    // $('li').eq(2).css('background', 'yellow');
 
 
 
@@ -121,16 +130,27 @@
 
     // Highlight the children of all the ordered lists
 
+    // $('ol').children().css('background', 'yellow');
+
     // Highlight all the sections of the first article
+
+    // $('article').first().children().next()css('background', 'yellow');
 
     // Highlight the ordered list of the first article
 
+    // $('article').first().children().last().css('background', 'yellow')
 
+    //  ******* Alternatively *******
+    // $('article').first().children().eq(7).css('background', 'yellow');
 
 
     // ========================= .parent() =========================
 
     // Highlight the entire ordered list when a list item is clicked
+
+    // $('li').click(function() {
+    //     $(this).parent().css('background', 'yellow');
+    // });
 
 
 
@@ -139,12 +159,28 @@
 
     // Highlight the first nested element inside all article elements
 
+    // $('article').each(function(index, element) {
+    //     $(element).children().first().css('background', 'yellow');
+    // })
+
 
     // Highlight the second list item of all ordered lists
+
+    // $('ol').each(function() {
+    //     $(this).children().first().next().css('background', 'yellow');
+    // })
+
+    //  ******* Alternatively *******
+    // $('ol').each(function() {
+    //     $(this).children().eq(1).css('background', 'yellow');
+    // })
 
 
     // Highlight the third list item of all ordered lists
 
+    // $('ol').each(function() {
+    //     $(this).children().last().prev().prev().css('background', 'yellow');
+    // })
 
 
 
@@ -152,14 +188,41 @@
 
     // Highlight the first li of the second ordered list
 
+    // $('article').first().next().children().eq(7).children().children().first().css('background', 'yellow');
+
+    // Instructor solution
+    // $('article').first().next().children().last().children().children().first().css('background-color', 'yellow');
 
     // alert each of the top five items when double clicking on the header for a section
-
+    // $('h3').dblclick(function() {
+    //     $(this).parent().children().last().children().children().each(function(index, element) {
+    //         alert($(element).text());
+    //     });
+    // });
+    //
+    // console.log($('section').parent().children().last().children().children().text());
 
     // Give a azure background color to every other list item (first item should be azure)
 
+    // Not quite the answer...keep working.
+    // $('li').each(function(index, element) {
+    //     if (index % 2 === 0) {
+    //         $(element).css('background', 'salmon');
+    //     }
+    // })
 
+    $('ol').each(function(indexA, element) {
+        // console.log(indexA);
+        // console.log(element);
+        $(element).children().each(function(indexB, element) {
+            // console.log(indexB);
+            // console.log(element);
+            if (indexB % 2 === 0) {
+                $(element).css('background', 'salmon');
+            }
+        })
 
+    })
 
 
 
