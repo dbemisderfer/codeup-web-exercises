@@ -2,9 +2,203 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JQuery Exercises</title>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+    <style>
+        .hiddenText {
+            visibility: hidden;
+        }
+        .highlighted {
+            background-color: yellow;
+        }
+        /*.hiding {*/
+        /*display: none;*/
+        /*}*/
+    </style>
 </head>
 <body>
+
+<!--<div id="newsletter" class="alert alert-warning alert-dismissible" role="alert">-->
+<!--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span id="newsletter-toggle" aria-hidden="true">&times;</span></button>-->
+<!--Would you like to sign up for our newsletter?-->
+<!--</div>-->
+
+<!--<div id="newsletter">-->
+<!--<h1>Would you like to sign up for our newsletter?<span id="newsletter-toggle"> (&times;)</span></h1>-->
+<!--</div>-->
+
+
+<!--<h2 id="status">0</h2>-->
+
+<!--<h3 id="national-parks-toggle">National Parks</h3>-->
+<!--<ul id="national-parks">-->
+<!--<li>Arches</li>-->
+<!--<li>Badlands</li>-->
+<!--<li>Carlsbad Caverns</li>-->
+<!--<li>Denali</li>-->
+<!--<li>Everglades</li>-->
+<!--</ul>-->
+<!--<h3 id="state-parks-texas-toggle">State Parks of Texas</h3>-->
+<!--<ul id="state-parks-texas">-->
+<!--<li>Abilene</li>-->
+<!--<li>Big Bend</li>-->
+<!--<li>Choke Canyon</li>-->
+<!--<li>Davis Mountains</li>-->
+<!--<li>Enchanted Rock</li>-->
+<!--</ul>-->
+
+
+<div>
+    <button id="button1" type="submit">Press here, please.</button>
+
+    <h2 id="registration" class="hiding">Please register for our site!</h2>
+
+    <h3 id="cross-state-parks">Blue Ridge Parkway</h3>
+    <ul id="blue-ridge" class="parks hiding">
+        <li>Borders both the Great Smoky Mountains and Shenandoah National Park.</li>
+        <li>Offers stunning views of Appalachia.</li>
+        <li>Stretches 469 miles along the crest of the Blue Ridge Mountains through North Carolina and Virginia.
+        </li>
+        <li>Fall leaf peeping is a hugely popular activity along the Parkway, as are hiking and wildlife viewing.
+        </li>
+    </ul>
+    <h3 id="pennsylvania">Gettysburg National Military Park</h3>
+    <ul id="gettysburg" class="parks hiding">
+        <li>Site of the largest battle ever waged during the American Civil War.</li>
+        <li>Where Lincoln delivered the Gettysburg Address.</li>
+        <li>Located 50 miles northwest of Baltimore, Maryland.</li>
+        <li>Its' cemetery contains more than 7,000 interments, including over 3,500 from the Civil War.</li>
+    </ul>
+    <h3 id="maryland">Fort McHenry National Monument and Historic Shrine</h3>
+    <ul id="fort-mchenry" class="parks hiding">
+        <li>Francis Scott Key wrote "The Star-Spangled Banner" here during the Battle of Baltimore, September 13-14,
+            1814.
+        </li>
+        <li>During the War of 1812, defenders of Fort McHenry stopped the British advance on Baltimore and helped to
+            preserve the United States.
+        </li>
+        <li>Remained an active military post, off and on, for nearly 100 years after the War of 1812.</li>
+        <li>Popular tourist attraction in the Baltimore, MD area.</li>
+    </ul>
+</div>
+
+
+
+<!--<dl>-->
+<!--<dt>Zion</dt>-->
+<!--<dd class="invisible hiddenText">Located in Utah</dd>-->
+<!--<dt>Yosemite</dt>-->
+<!--<dd class="invisible hiddenText">Located in California</dd>-->
+<!--<dt>Yellowstone</dt>-->
+<!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
+<!--<dt>Glacier</dt>-->
+<!--<dd class="invisible hiddenText">Located in Montana</dd>-->
+<!--<dt>Joshua Tree</dt>-->
+<!--<dd class="invisible hiddenText">Located in California</dd>-->
+<!--<dt>Grand Teton</dt>-->
+<!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
+<!--<dt>Sequoia</dt>-->
+<!--<dd class="invisible hiddenText">Located in California</dd>-->
+<!--<dt>Acadia</dt>-->
+<!--<dd class="invisible hiddenText">Located in Maine</dd>-->
+<!--<dt>Great Smoky Mountains</dt>-->
+<!--<dd class="invisible hiddenText">Located in Tennessee and North Carolina</dd>-->
+<!--<dt>Everglades</dt>-->
+<!--<dd class="invisible hiddenText">Located in Florida</dd>-->
+
+<!--</dl>-->
+
+<!--<a href="" id="disappearReappear">Click to view the locations of all of these national parks!</a>-->
+
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+<!--<script src="js/jquery-3.3.1.js"></script>-->
+<!--&lt;!&ndash;<script src="http://code.jquery.com/jquery-3.3.1.js"></script>&ndash;&gt;-->
+<!--<script src="js/jquery_faq.js"></script>-->
+<!--<script>-->
+<!--$(document).ready(function() {-->
+<!--$('#disappearReappear').click(function(event) {-->
+<!--event.preventDefault(); // Removing "#" from href prevents anchor link from sending you back to top of page-->
+<!--$('.invisible').toggleClass('hiddenText');-->
+<!--})-->
+<!--});-->
+
+<!--$()-->
+
+<!--$('dt').click(function(event) {-->
+<!--// $(this).addClass('highlighted');-->
+<!--$(this).toggleClass('highlighted');-->
+<!--})-->
+
+
+
+<!--</script>-->
+
+<script>
+    // function Car() {
+    //     this.speed = 0;
+    //     var self = this;
+    //     setInterval( function() {
+    //         self.speed++;
+    //         document.getElementById("status").innerHTML = self.speed;
+    //     }, 300);
+    // }
+    // Car();
+
+    $('#newsletter-toggle').click(function() {
+        $('#newsletter').hide();
+    });
+
+    // setTimeout(function() {
+    //     $('h2').fadeIn(3000);
+    // }, 8000);
+    //
+    //
+    $('#registration').fadeIn(3000);
+
+    $('#cross-state-parks').click(function() {
+        $('#blue-ridge').slideToggle()
+    });
+
+    $('#pennsylvania').click(function() {
+        $('#gettysburg').slideToggle()
+    });
+
+    $('#maryland').click(function() {
+        $('#fort-mchenry').slideToggle()
+    });
+
+    // $('#national-parks-toggle').click(function() {
+    //     $('#national-parks').slideToggle(4500);
+    // });
+    //
+    // $('#state-parks-texas-toggle').click(function() {
+    //     $('#state-parks-texas').fadeToggle(5500);
+    // });
+
+    $('#button1').click(function() {
+        $("ul li:last-child").css('background', 'yellow');
+        // $("li").last().css('background', 'yellow');
+    });
+
+    $('#cross-state-parks').click(function() {
+        $('#cross-state-parks').first().css('font-weight', 'bold');
+    });
+
+    $('#pennsylvania').click(function() {
+        $('#pennsylvania').first().css('font-weight', 'bold');
+    });
+
+    $('#maryland').click(function() {
+        $('#maryland').first().css('font-weight', 'bold');
+    });
+
+    // $('#national-parks-heading').next().css('background-color', 'salmon');
+
+</script>
+
+
 
 </body>
 </html>
