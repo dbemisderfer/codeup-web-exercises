@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <title>JQuery Exercises</title>
     <style>
-        .hiddenText {
+        .invisible {
             visibility: hidden;
         }
-        .highlighted {
-            background-color: yellow;
-        }
-        /*.hiding {*/
-            /*display: none;*/
-        /*}*/
+
     </style>
 </head>
 <body>
@@ -29,29 +24,31 @@
         <h2>Please register for our site.</h2>
     </div>
 
-    <!--<dl>-->
-    <!--<dt>Zion</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Utah</dd>-->
-    <!--<dt>Yosemite</dt>-->
-    <!--<dd class="invisible hiddenText">Located in California</dd>-->
-    <!--<dt>Yellowstone</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
-    <!--<dt>Glacier</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Montana</dd>-->
-    <!--<dt>Joshua Tree</dt>-->
-    <!--<dd class="invisible hiddenText">Located in California</dd>-->
-    <!--<dt>Grand Teton</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Wyoming</dd>-->
-    <!--<dt>Sequoia</dt>-->
-    <!--<dd class="invisible hiddenText">Located in California</dd>-->
-    <!--<dt>Acadia</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Maine</dd>-->
-    <!--<dt>Great Smoky Mountains</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Tennessee and North Carolina</dd>-->
-    <!--<dt>Everglades</dt>-->
-    <!--<dd class="invisible hiddenText">Located in Florida</dd>-->
+    <!--<a href="#" id="highlight-important">Click to highlight important text.</a>-->
+    <a href="#" id="toggle">Click to view the locations of all of these national parks!</a>
+    <dl>
+    <dt>Zion</dt>
+    <dd class="invisible showMe">Located in Utah</dd>
+    <dt>Yosemite</dt>
+    <dd class="invisible showMe">Located in California</dd>
+    <dt>Yellowstone</dt>
+    <dd class="invisible showMe">Located in Wyoming</dd>
+    <dt>Glacier</dt>
+    <dd class="invisible showMe">Located in Montana</dd>
+    <dt>Joshua Tree</dt>
+    <dd class="invisible showMe">Located in California</dd>
+    <dt>Grand Teton</dt>
+    <dd class="invisible showMe">Located in Wyoming</dd>
+    <dt>Sequoia</dt>
+    <dd class="invisible showMe">Located in California</dd>
+    <dt>Acadia</dt>
+    <dd class="invisible showMe">Located in Maine</dd>
+    <dt>Great Smoky Mountains</dt>
+    <dd class="invisible showMe">Located in Tennessee and North Carolina</dd>
+    <dt>Everglades</dt>
+    <dd class="invisible showMe">Located in Florida</dd>
 
-    <!--</dl>-->
+    </dl>
 
     <div>
         <button id="button1" type="submit">Press here, please.</button>
@@ -129,6 +126,27 @@
         // }
         // Car();
 
+        // *****************************************
+        // JQuery Attributes and CSS Exercise ******
+        // *****************************************
+        // $('#highlight-important').click(function(event) {
+        //     event.preventDefault();
+        //    $('.invisible').toggleClass('invisible');
+        // });
+
+        $('#toggle').click(function(event) {
+            event.preventDefault();
+            $('.showMe').toggleClass('invisible');
+        })
+
+        // *****************************************
+        // *****************************************
+        // *****************************************
+
+
+        // *****************************************
+        // JQuery Traversing Exercise **************
+        // *****************************************
         $('#button1').click(function () {
             $('ul').each(function () {
                 $(this).children().last().css('background-color', 'yellow');
@@ -156,8 +174,17 @@
         $('li').click(function () {
             $(this).parent().children().first().css('color', 'blue');
         })
+        // *****************************************
+        // *****************************************
+        // *****************************************
 
 
+
+
+
+        // *****************************************
+        // JQuery Effects Exercise *****************
+        // *****************************************
         $('#newsletter-toggle').click(function() {
             $('#newsletter').hide();
         })
@@ -171,6 +198,13 @@
         $('h2').hide();
 
         $('h2').delay(8000).fadeIn(3000);
+        // *****************************************
+        // *****************************************
+        // *****************************************
+
+
+
+
 
         // $('#cross-state-parks').click(function() {
         //     $('#blue-ridge').slideToggle()
@@ -195,18 +229,6 @@
         // });
 
 
-
-        $('#cross-state-parks').click(function() {
-            $('#cross-state-parks').first().css('font-weight', 'bold');
-        });
-
-        $('#pennsylvania').click(function() {
-            $('#pennsylvania').first().css('font-weight', 'bold');
-        });
-
-        $('#maryland').click(function() {
-            $('#maryland').first().css('font-weight', 'bold');
-        });
 
         // $('#national-parks-heading').next().css('background-color', 'salmon');
 
