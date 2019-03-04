@@ -115,6 +115,7 @@
 <!--</script>-->
 
 <script>
+    $(document).ready(function() {
         "use strict";
         // function Car() {
         //     this.speed = 0;
@@ -187,17 +188,22 @@
         // *****************************************
         $('#newsletter-toggle').click(function() {
             $('#newsletter').hide();
+            // Or...(but not recommended)
+            // $(this).parent().parent().hide();
         })
 
-        $('ul').hide();
+        // ************
+        // $('ul').hide();
+
+        $('h3').next().hide(); //should normally be placed at top of js script
 
         $('h3').click(function() {
-            $(this).next().toggle();
+            $(this).next().slideToggle(3000);
         })
 
-        $('h2').hide();
+        // ************
 
-        $('h2').delay(8000).fadeIn(3000);
+        $('h2').hide().delay(8000).fadeIn(3000);
         // *****************************************
         // *****************************************
         // *****************************************
@@ -231,6 +237,9 @@
 
 
         // $('#national-parks-heading').next().css('background-color', 'salmon');
+
+
+    });
 
 
 </script>
