@@ -10,68 +10,26 @@
         .highlighted {
             background-color: yellow;
         }
-        .hiding {
-            display: none;
-        }
+        /*.hiding {*/
+            /*display: none;*/
+        /*}*/
     </style>
 </head>
 <body>
 
+<!-- Use eq(index) to target specific elements!!!!!!!!! -->
+
+<!-- Use delay(milliseconds) w/show(), hide(), toggle(), fade(), slide(), etc. -->
+
     <div id="newsletter">
-        <h1>Would you like to sign up for our newsletter?<span id="newsletter-toggle"> (x)</span></h1>
+    <h1>Would you like to sign up for our newsletter?<span id="newsletter-toggle"> (&times;)</span></h1>
     </div>
 
+    <div>
+        <h2>Please register for our site.</h2>
+    </div>
 
-    <!--<h2 id="status">0</h2>-->
-
-    <!--<h3 id="national-parks-toggle">National Parks</h3>-->
-    <!--<ul id="national-parks">-->
-        <!--<li>Arches</li>-->
-        <!--<li>Badlands</li>-->
-        <!--<li>Carlsbad Caverns</li>-->
-        <!--<li>Denali</li>-->
-        <!--<li>Everglades</li>-->
-    <!--</ul>-->
-    <!--<h3 id="state-parks-texas-toggle">State Parks of Texas</h3>-->
-    <!--<ul id="state-parks-texas">-->
-        <!--<li>Abilene</li>-->
-        <!--<li>Big Bend</li>-->
-        <!--<li>Choke Canyon</li>-->
-        <!--<li>Davis Mountains</li>-->
-        <!--<li>Enchanted Rock</li>-->
-    <!--</ul>-->
-
-
-
-    <button id="button1" type="submit">Press here, please.</button>
-
-    <h2 id="registration" class="hiding">Please register for our site!</h2>
-
-    <h3 id="cross-state-parks">Blue Ridge Parkway</h3>
-        <ul id="blue-ridge" class="parks hiding">
-            <li>Borders both the Great Smoky Mountains and Shenandoah National Park.</li>
-            <li>Offers stunning views of Appalachia.</li>
-            <li>Stretches 469 miles along the crest of the Blue Ridge Mountains through North Carolina and Virginia.</li>
-            <li>Fall leaf peeping is a hugely popular activity along the Parkway, as are hiking and wildlife viewing.</li>
-        </ul>
-    <h3 id="pennsylvania">Gettysburg National Military Park</h3>
-        <ul id="gettysburg" class="parks hiding">
-            <li>Site of the largest battle ever waged during the American Civil War.</li>
-            <li>Where Lincoln delivered the Gettysburg Address.</li>
-            <li>Located 50 miles northwest of Baltimore, Maryland.</li>
-            <li>Its' cemetery contains more than 7,000 interments, including over 3,500 from the Civil War.</li>
-        </ul>
-    <h3 id="maryland">Fort McHenry National Monument and Historic Shrine</h3>
-        <ul id="fort-mchenry" class="parks hiding">
-            <li>Francis Scott Key wrote "The Star-Spangled Banner" here during the Battle of Baltimore, September 13-14, 1814.</li>
-            <li>During the War of 1812, defenders of Fort McHenry stopped the British advance on Baltimore and helped to preserve the United States.</li>
-            <li>Remained an active military post, off and on, for nearly 100 years after the War of 1812.</li>
-            <li>Popular tourist attraction in the Baltimore, MD area.</li>
-        </ul>
-
-
-
-<!--<dl>-->
+    <!--<dl>-->
     <!--<dt>Zion</dt>-->
     <!--<dd class="invisible hiddenText">Located in Utah</dd>-->
     <!--<dt>Yosemite</dt>-->
@@ -93,14 +51,53 @@
     <!--<dt>Everglades</dt>-->
     <!--<dd class="invisible hiddenText">Located in Florida</dd>-->
 
-<!--</dl>-->
+    <!--</dl>-->
+
+    <div>
+        <button id="button1" type="submit">Press here, please.</button>
+
+
+        <h3 id="cross-state-parks">Blue Ridge Parkway</h3>
+            <ul id="blue-ridge" class="parks hiding">
+                <li>Borders both the Great Smoky Mountains and Shenandoah National Park.</li>
+                <li>Offers stunning views of Appalachia.</li>
+                <li>Stretches 469 miles along the crest of the Blue Ridge Mountains through North Carolina and Virginia.
+                </li>
+                <li>Fall leaf peeping is a hugely popular activity along the Parkway, as are hiking and wildlife viewing.
+                </li>
+            </ul>
+
+        <h3 id="pennsylvania">Gettysburg National Military Park</h3>
+            <ul id="gettysburg" class="parks hiding">
+                <li>Site of the largest battle ever waged during the American Civil War.</li>
+                <li>Where Lincoln delivered the Gettysburg Address.</li>
+                <li>Located 50 miles northwest of Baltimore, Maryland.</li>
+                <li>Its' cemetery contains more than 7,000 interments, including over 3,500 from the Civil War.</li>
+            </ul>
+
+        <h3 id="maryland">Fort McHenry National Monument and Historic Shrine</h3>
+            <ul id="fort-mchenry" class="parks hiding">
+                <li>Francis Scott Key wrote "The Star-Spangled Banner" here during the Battle of Baltimore, September 13-14,
+                    1814.
+                </li>
+                <li>During the War of 1812, defenders of Fort McHenry stopped the British advance on Baltimore and helped to
+                    preserve the United States.
+                </li>
+                <li>Remained an active military post, off and on, for nearly 100 years after the War of 1812.</li>
+                <li>Popular tourist attraction in the Baltimore, MD area.</li>
+            </ul>
+    </div>
+
+
+
+
 
 <!--<a href="" id="disappearReappear">Click to view the locations of all of these national parks!</a>-->
 
 
 <script src="js/jquery-3.3.1.js"></script>
 <!--<script src="http://code.jquery.com/jquery-3.3.1.js"></script>-->
-<script src="js/jquery_faq.js"></script>
+<!--<script src="js/jquery_faq.js"></script>-->
 <!--<script>-->
     <!--$(document).ready(function() {-->
         <!--$('#disappearReappear').click(function(event) {-->
@@ -121,65 +118,98 @@
 <!--</script>-->
 
 <script>
-    // function Car() {
-    //     this.speed = 0;
-    //     var self = this;
-    //     setInterval( function() {
-    //         self.speed++;
-    //         document.getElementById("status").innerHTML = self.speed;
-    //     }, 300);
-    // }
-    // Car();
+        "use strict";
+        // function Car() {
+        //     this.speed = 0;
+        //     var self = this;
+        //     setInterval( function() {
+        //         self.speed++;
+        //         document.getElementById("status").innerHTML = self.speed;
+        //     }, 300);
+        // }
+        // Car();
 
-    $('#newsletter-toggle').click(function() {
-        $('#newsletter').hide();
-    });
+        $('#button1').click(function () {
+            $('ul').each(function () {
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
 
-    setTimeout(function() {
-        $('h2').fadeIn(3000);
-    }, 8000);
+        // ^^^ Alternate method for above ^^^
+        // $('#button1').click(function () {
+        //     $('ul').each(function (index, element) {
+        //         $(element).children().last().css('background-color', 'yellow');
+        //     });
+        // });
+
+        // ^^^ Alternate method for above ^^^
+        // $('#button1').click(function() {
+        //     $("ul li:last-child").css('background', 'yellow');
+        // });
 
 
-    $('#registration').fadeIn(3000);
+        $('h3').click(function() {
+            $(this).next().children().css('font-weight', 'bold');
+        });
 
-    $('#cross-state-parks').click(function() {
-        $('#blue-ridge').slideToggle()
-    });
 
-    $('#pennsylvania').click(function() {
-        $('#gettysburg').slideToggle()
-    });
+        $('li').click(function () {
+            $(this).parent().children().first().css('color', 'blue');
+        })
 
-    $('#maryland').click(function() {
-        $('#fort-mchenry').slideToggle()
-    });
 
-    // $('#national-parks-toggle').click(function() {
-    //     $('#national-parks').slideToggle(4500);
-    // });
-    //
-    // $('#state-parks-texas-toggle').click(function() {
-    //     $('#state-parks-texas').fadeToggle(5500);
-    // });
+        $('#newsletter-toggle').click(function() {
+            $('#newsletter').hide();
+        })
 
-    $('#button1').click(function() {
-        $("ul li:last-child").css('background', 'yellow');
-        // $("li").last().css('background', 'yellow');
-    });
+        $('ul').hide();
 
-    $('#cross-state-parks').click(function() {
-        $('#cross-state-parks').first().css('font-weight', 'bold');
-    });
+        $('h3').click(function() {
+            $(this).next().toggle();
+        })
 
-    $('#pennsylvania').click(function() {
-        $('#pennsylvania').first().css('font-weight', 'bold');
-    });
+        $('h2').hide();
 
-    $('#maryland').click(function() {
-        $('#maryland').first().css('font-weight', 'bold');
-    });
+        $('h2').delay(8000).fadeIn(3000);
 
-    // $('#national-parks-heading').next().css('background-color', 'salmon');
+        // $('#cross-state-parks').click(function() {
+        //     $('#blue-ridge').slideToggle()
+        // });
+        //
+        // $('#pennsylvania').click(function() {
+        //     $('#gettysburg').slideToggle()
+        // });
+        //
+        // $('#maryland').click(function() {
+        //     $('#fort-mchenry').slideToggle()
+        // });
+
+
+
+        // $('#national-parks-toggle').click(function() {
+        //     $('#national-parks').slideToggle(4500);
+        // });
+        //
+        // $('#state-parks-texas-toggle').click(function() {
+        //     $('#state-parks-texas').fadeToggle(5500);
+        // });
+
+
+
+        $('#cross-state-parks').click(function() {
+            $('#cross-state-parks').first().css('font-weight', 'bold');
+        });
+
+        $('#pennsylvania').click(function() {
+            $('#pennsylvania').first().css('font-weight', 'bold');
+        });
+
+        $('#maryland').click(function() {
+            $('#maryland').first().css('font-weight', 'bold');
+        });
+
+        // $('#national-parks-heading').next().css('background-color', 'salmon');
+
 
 </script>
 
