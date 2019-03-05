@@ -17,20 +17,26 @@
     $(document).ready(function() {
 
         $('#refresh').click(function() {
+            refreshPage();
+
+            // $.ajax('data/blog.json').done(function(data) {
+            //     console.log(data);
+            // })
+        })
+
+        function refreshPage() {
             $.ajax('data/blog.json').done(function(data) {
-                console.log(data);
+
+                var output = '';
+                data.forEach(function(element) {
+                    output += '<h3>' + element.title + '</h3>' + '<p>' + element.date + '</p>' + '<p>' + element.content + '</p>' + '<p>' + element.categories + '</p>'
+
+                    $('#posts').html(output);
+                })
             })
-        })
+        }
 
-        $.ajax('data/blog.json').done(function(data) {
 
-            var output = '';
-            data.forEach(function(element) {
-                output += '<h3>' + element.title + '</h3>' + '<p>' + element.date + '</p>' + '<p>' + element.content + '</p>' + '<p>' + element.categories + '</p>'
-
-                $('#posts').html(output);
-            })
-        })
 
 
 
