@@ -29,9 +29,11 @@
     // TODO: Create an ajax GET request for /data/inventory.json
 
     $('#refresh').click(function() {
-        $.ajax('data/inventory.json').done(function(data) {
-            console.log(data);
-        })
+
+        refreshPage();
+        // $.ajax('data/inventory.json').done(function(data) {
+        //     console.log(data);
+        // })
     })
 
     // TODO: Take the data from inventory.json and append it to the products table
@@ -39,7 +41,9 @@
 
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
-    $.ajax('data/inventory.json').done(function(data) {
+
+    function refreshPage() {
+        $.ajax('data/inventory.json').done(function(data) {
 
             var output = "";
 
@@ -56,7 +60,11 @@
             });
 
 
-    });
+        });
+    };
+
+
+
 
 
     //       HINT: You will want to target #insertProducts for your new HTML elements
