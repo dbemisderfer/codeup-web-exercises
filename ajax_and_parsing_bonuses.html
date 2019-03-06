@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- If IE use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Set the page to the width of the device and set the zoom level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Ajax and Parsing Bonuses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+
+        .boxes {
+            width: auto;
+            height: 19em;
+            border: 1px solid gray;
+            background: #F2F2F2;
+        }
+
+        .jumbotron {
+            background-color: #848487;
+            color: #EB9D3A;
+        }
+
+        .tab-content {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .nav-tabs {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<main class="container">
+    <div class="row text-center">
+        <div class="col-3">
+            <button id="left-btn" class="btn btn-danger btn-large">Chuck Norris Jokes</button>
+        </div>
+        <div id="text-here" class="col-3 boxes"></div>
+        <div class="col-3">
+            <button id="right-btn" class="btn btn-success btn-large">Random Programming Quotes</button>
+        </div>
+    </div>
+
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        // $('h1').click(function() {
+        //     alert("Say Hello");
+        // })
+
+//     ## Ajax and Parsing Bonuses
+//
+//     ### Joke and Quote Page
+        $('#left-btn').click(function() {
+            postRandomJoke();
+        });
+
+
+        function postRandomJoke() {
+            $.ajax('http://api.icndb.com/jokes/random').done(function(data) {
+                console.log(data.value.joke);
+                var output = "";
+                var joke = data.value.joke
+
+                output += "<p>" + joke + "</p>";
+
+                $('#text-here').html(output);
+
+            });
+        }
+
+
+
+        $('#right-btn').click(function() {
+
+        });
+
+
+//
+//     Create single page app with a center div and one button on the left and right
+//     of this center div. When the left button is clicked, a random joke should be
+//     displayed in the center div from [The Internet Chuck Norris Database]
+//     (http://www.icndb.com/api/) ***(WARNING: some jokes may be a bit off color)***.
+//     When the right button is clicked, a random programming quote should be
+//     displayed in the center div from [Programming Quotes API]
+//     (http://quotes.stormconsultancy.co.uk/api).
+//
+//     ### Restaurant API
+//
+//     Using the endpoint ```https://frest.glitch.me/restaurants```, complete the following exercises:
+//
+//         1. return an array of restaurant objects that are currently open
+//     1. return the number of "Pizza" restaurants
+//     1. **EXTRA CHALLENGE:** find the restaurant closest to "Katz's Delicatessen"
+//     1. **EXTRA CHALLENGE:** use Bootstrap or CSS Grid with Flexbox to style out cards for all restarants and use JS to dynamically build the cards
+//
+//     ### Sales Report Parsing
+//
+//     Using the following JS:
+//
+//         ```js
+// var reportContents = "Monthly Sales Report\nDate: 03-17-2015\nOffice: Codeup\n ===================================================\nEmployee Number, First Name, Last Name, Sales Units\n***************************************************\n\n1, Jane, Janeway, 3\n3, Tricia, Triciason, 5\n4, Jeannette, Jeanson, 4\n5, Charles Emmerson III, Winchester, 2\n6, Chet, Chedderson, 8\n7, Chaiam, Chaiamson, 12\n8, Dale, Dalesinger, 1\n9, Zig, Ziglar, 50\n10, Henry, Kissinger, 1\n11, Arthur Herbert, Fonzarelli, 23\n12, Betty, Boop, 67";
+// ```
+//
+//     format an output to display the following:
+//
+//         - total number of employees
+//     - total number of units sold
+//     - avg units sold per employee
+//
+//     The output should share employee production, ordered from highest to lowest # of units and should have the following formatting:
+//
+//         ```
+// * Units   |     Full Name       |   Employee Number
+// * 5             Bob Boberson        2
+// ```
+//
+//     ### GitHub API
+//
+//     Using the endpoint ```https://gist.githubusercontent.com/ryanorsinger/f77e5ec94dbe14e21771/raw/d4a1f916723ca69ac99fdcab48746c6682bf4530/profiles.json``` produce a new object called var report and console.log it's contents. This report should display
+//
+//     - total number of profiles
+//     - number of active profiles
+//     - sum of the balance of all profiles
+//     - average balance per users
+//     - average age of all users
+//     - Gender count of users
+//     - List of all companies represented by the users
+//     - Name the most commonly occuring eye-color.
+//     - What's the balance of all non-active accounts vs. the balance of all active accounts?
+
+
+    });
+
+</script>
+</body>
+</html>
