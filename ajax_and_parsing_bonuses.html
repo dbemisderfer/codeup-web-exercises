@@ -24,6 +24,47 @@
             background: #F2F2F2;
         }
 
+        .chuck-box {
+            width: auto;
+            height: 19em;
+            border: 1px solid gray;
+            background-color: rgba(238, 238, 238, 0.81) !important; /* Opacity */
+            background-blend-mode: color; /* Opacity */
+            background-image: url("img/chuck-norris2.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .program-box {
+            width: auto;
+            height: 19em;
+            border: 1px solid gray;
+            background-color: rgba(238, 238, 238, 0.81) !important; /* Opacity */
+            background-blend-mode: color; /* Opacity */
+            background-image: url("img/programmer.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .flexbox {
+            display:flex;
+            justify-content:center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        #intro {
+            min-height: 65vh;
+            display: flex; /* NEW */
+        }
+
+        .container-fluid {
+            height: 100%;
+            min-height: 100%;
+        }
+
         .jumbotron {
             background-color: #848487;
             color: #EB9D3A;
@@ -44,14 +85,18 @@
 <body>
 
 
-<main class="container">
-    <div class="row text-center">
-        <div class="col-3">
-            <button id="left-btn" class="btn btn-danger btn-large">Chuck Norris Jokes</button>
-        </div>
-        <div id="text-here" class="col-3 boxes"></div>
-        <div class="col-3">
-            <button id="right-btn" class="btn btn-success btn-large">Random Programming Quotes</button>
+<main id="intro">
+    <div class="container">
+        <div class="row text-center align-items-center">
+            <div class="col">
+                <button id="left-btn" class="btn btn-danger btn-block">Chuck Norris Jokes</button>
+            </div>
+            <div id="picture-here" class="col-6 boxes flexbox">
+                <div id="text-here" class="row center-block"></div>
+            </div>
+            <div class="col">
+                <button id="right-btn" class="btn btn-success btn-block">Random Programming Quotes</button>
+            </div>
         </div>
     </div>
 
@@ -69,13 +114,14 @@
 //
 //     ### Joke and Quote Page
         $('#left-btn').click(function() {
+            changeProgrammerBox();
             postRandomJoke();
         });
 
 
         function postRandomJoke() {
             $.ajax('http://api.icndb.com/jokes/random').done(function(data) {
-                console.log(data.value.joke);
+                // console.log(data.value.joke);
                 var output = "";
                 var joke = data.value.joke
 
@@ -89,8 +135,38 @@
 
 
         $('#right-btn').click(function() {
-
+            changeChuckBox();
+            postRandomQuote();
         });
+
+        $.ajax('http://quotes.stormconsultancy.co.uk/random.json').done(function(data) {
+            console.log(data.quote);
+        })
+
+        function postRandomQuote() {
+            var output = "";
+
+            $.ajax('http://quotes.stormconsultancy.co.uk/random.json').done(function(data) {
+                var quote = data.quote;
+                output += '<p>' + quote + '</p>';
+
+                $('#text-here').html(output);
+            })
+        }
+
+        function changeChuckBox() {
+            $.ajax('http://quotes.stormconsultancy.co.uk/random.json').done(function(data) {
+                $('#picture-here').removeClass('chuck-box').removeClass('boxes').addClass('program-box');
+
+            })
+        }
+
+        function changeProgrammerBox() {
+            $.ajax('http://api.icndb.com/jokes/random').done(function(data) {
+                $('#picture-here').removeClass('program-box').removeClass('boxes').addClass('chuck-box');
+
+            })
+        }
 
 
 //

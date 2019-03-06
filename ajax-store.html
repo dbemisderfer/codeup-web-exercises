@@ -60,12 +60,12 @@
 <div class="container">
     <table id="products" class="table table-bordered table-striped table-hover">
         <thead>
-        <tr>
-            <th class="text-center">Title</th>
-            <th class="text-center">Quantity</th>
-            <th class="text-center">Price</th>
-            <th class="text-center">Categories</th>
-        </tr>
+            <tr>
+                <th class="text-center">Title</th>
+                <th class="text-center">Quantity</th>
+                <th class="text-center">Price</th>
+                <th class="text-center">Categories</th>
+            </tr>
         </thead>
         <tbody id="insertProducts"></tbody>
     </table>
@@ -89,10 +89,43 @@
     $('#refresh').click(function() {
 
         refreshPage();
-        // $.ajax('data/inventory.json').done(function(data) {
-        //     console.log(data);
-        // })
+
     })
+
+    // $.get('data/inventory.json').done(function(data) { //can use $.ajax, as well
+    //     console.log(data);
+    // })
+
+    var jqXhr = $.get('data/inventory.json');
+
+
+    // Using FOR LOOP
+    jqXhr.done(function(data) {
+        console.log(data);
+        console.log(data[1].title); // "Drill"
+        console.log(data[0].categories[0]); //"tool" (inside of an array)
+
+        for (var i = 0; i < data.length; i +=1) {
+            for (var j = 0; j < data[i].categories.length; j += 1) {
+                console.log("Item: " + data[i].title + " Category: " + data[i].categories[j])
+            }
+        }
+
+
+    });
+
+    // Using FOR EACH LOOP
+    jqXhr.done(function(items) {
+
+        items.forEach(function(item) {
+            item.categories.forEach(function(category) {
+                console.log("Item: " + item.title + " Category: " + category)
+            })
+        })
+
+    });
+
+
 
     // TODO: Take the data from inventory.json and append it to the products table
 
@@ -140,6 +173,21 @@
         });
     };
 
+    // As a FOR LOOP
+    // var html = "";
+    //
+    // for (var i = 0; i < items.length; i += 1) {
+    //     html += '<tr class='table-secondary'>';
+    //     html += '<td class="text-center">' + items[i].title + '</th>';
+    //     html += '<td class="text-center">' + items[i].quantity + '</th>';
+    //     html += '<th class="text-center">' + items[i].price + '</th>';
+    //     html += '<th class="text-center">' + items[i].categories.join(', ') + '</th>';
+    //     html += '</tr>';
+    // }
+
+
+
+    // $('#insertProducts').append();
 
 
 
