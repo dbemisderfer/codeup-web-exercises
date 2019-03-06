@@ -3,38 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajax Blog</title>
+
+    <!-- If IE use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Set the page to the width of the device and set the zoom level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <style>
+        .flower-font {
+            font-family: 'Indie Flower', cursive;
+        }
+
+        .pastel-color {
+            background: antiquewhite;
+        }
+
+    </style>
 </head>
 <body>
-<div id="posts"></div>
+<div id="posts" class="container">
 
-<button id="refresh">Refresh</button>
+</div>
+
+<!--<button id="refresh">Refresh</button>-->
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 <script>
     $(document).ready(function() {
 
-        $('#refresh').click(function() {
-            refreshPage();
+        // $.ajax('data/blog.json').done(function(data) {
+        //     console.log(data);
+        // })
 
-            // $.ajax('data/blog.json').done(function(data) {
-            //     console.log(data);
-            // })
-        })
+        function capFirstLetter(string) {
+            return string[0].toUpperCase() + string.substring(1);
+        }
 
-        function refreshPage() {
+        function returnString(array) {
+            return array.join(", ");
+        }
+
+
+        function capitalizeAllWords(arr) {
+            var output = [];
+
+            arr.forEach(function(element) {
+                output.push(capFirstLetter(element));
+            })
+
+            return output;
+        }
+
+
+
+        // $('#refresh').click(function() {
+        //     refreshPage();
+        //
+        //
+        // })
+
+        // function refreshPage() {
             $.ajax('data/blog.json').done(function(data) {
 
                 var output = '';
                 data.forEach(function(element) {
-                    output += '<h3>' + element.title + '</h3>' + '<p>' + element.date + '</p>' + '<p>' + element.content + '</p>' + '<p>' + element.categories + '</p>'
+                    output += '<h3 class="text-center flower-font">' + element.title + '</h3>' +
+                        '<p class="text-center flower-font">' + element.date + '</p>' +
+                        '<p class="flower-font pastel-color">' + element.content + '</p>' +
+                        '<p class="flower-font">Category: ' + returnString(capitalizeAllWords(element.categories)) + '</p>'
 
                     $('#posts').html(output);
                 })
             })
-        }
+        // }
 
 
 
