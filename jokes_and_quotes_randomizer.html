@@ -161,14 +161,12 @@
         function changeChuckBox() {
             $.ajax('http://quotes.stormconsultancy.co.uk/random.json').done(function(data) {
                 $('#picture-here').removeClass('chuck-box').removeClass('boxes').addClass('program-box');
-
             })
         }
 
         function changeProgrammerBox() {
             $.ajax('http://api.icndb.com/jokes/random').done(function(data) {
                 $('#picture-here').removeClass('program-box').removeClass('boxes').addClass('chuck-box');
-
             })
         }
 
