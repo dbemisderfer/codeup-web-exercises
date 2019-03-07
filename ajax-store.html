@@ -107,7 +107,7 @@
 
         for (var i = 0; i < data.length; i +=1) {
             for (var j = 0; j < data[i].categories.length; j += 1) {
-                console.log("Item: " + data[i].title + " Category: " + data[i].categories[j])
+                console.log("For Loop Item: " + data[i].title + " Category: " + data[i].categories[j])
             }
         }
 
@@ -119,7 +119,7 @@
 
         items.forEach(function(item) {
             item.categories.forEach(function(category) {
-                console.log("Item: " + item.title + " Category: " + category)
+                console.log("For Each Item: " + item.title + " Category: " + category)
             })
         })
 

@@ -13,6 +13,11 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
     // ********* JQUERY MOUSE EVENTS EXERCISE *********
 
     $('h1').click(function() {
