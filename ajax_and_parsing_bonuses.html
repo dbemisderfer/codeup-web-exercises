@@ -90,12 +90,68 @@
 <!--</main>-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 <script>
     $(document).ready(function() {
 
-        $('h1').click(function() {
-            alert("Say Hello");
+        $.ajax('https://frest.glitch.me/restaurants').done(function(restaurants) {
+            // console.log(restaurants);
+
+
+            var count = 0;
+            restaurants.forEach(function(restaurant) {
+                // console.log(restaurant.cuisine_type)
+
+                if (restaurant.cuisine_type.toLowerCase() === 'pizza') {
+                    // console.log(restaurant.name);
+                    count += 1;
+                    // console.log(count);
+                }
+
+            });
+
+            console.log(count);
+
         })
+
+        // $('h1').click(function() {
+        //     alert("Say Hello");
+        // })
+
+        // function countDown(count) {
+        //     for (var i = count; i >= 0; i -= 1) {
+        //         console.log(count);
+        //     }
+        // }
+        //
+        // function countPizza(callback) {
+        //
+        //     return $.ajax('https://frest.glitch.me/restaurants');
+        //     $.ajax('https://frest.glitch.me/restaurants').done(function(restaurants) {
+        //         // console.log(restaurants);
+        //
+        //
+        //         var count = 0;
+        //         restaurants.forEach(function(restaurant) {
+        //             // console.log(restaurant.cuisine_type)
+        //
+        //             if (restaurant.cuisine_type.toLowerCase() === 'pizza') {
+        //                 // console.log(restaurant.name);
+        //                 count += 1;
+        //                 // console.log(count);
+        //             }
+        //
+        //         });
+        //         // return count;
+        //         callback(count);
+        //
+        //     })
+        //
+        // }
+        //
+        // countPizza();
+        // console.log(countPizza(countDown));
+
 
 //     ## Ajax and Parsing Bonuses
 
