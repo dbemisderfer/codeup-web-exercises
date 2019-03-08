@@ -125,6 +125,10 @@
 
     // Highlight the third li of the entire page
 
+    // $('li').first().next().next().css('background', 'yellow');
+
+    // Super long way
+    // $('article').first().children().last().children().children().first().next().next().css('background', 'yellow');
 
 
 
@@ -158,20 +162,20 @@
 
     // Highlight the first nested element inside all article elements
 
-    // $('article').each(function() {
+    // $('article').each(function(index, element) {
     //     $(this).children().first().css('background', 'yellow');
     // });
 
     // Highlight the second list item of all ordered lists
 
-    // $('ol').each(function() {
+    // $('ol').each(function(index, element) {
     //     $(this).children().first().next().css('background', 'yellow');
     // });
 
 
     // Highlight the third list item of all ordered lists
 
-    // $('ol').each(function() {
+    // $('ol').each(function(index, element) {
     //     $(this).children().eq(2).css('background', 'yellow');
     // })
 
@@ -204,13 +208,14 @@
 
     // Give a azure background color to every other list item (first item should be azure)
 
-    // $('ol').each(function(index, element) {
-    //     $(element).children().each(function(index) {
-    //         if (index % 2 === 0)
-    //             $(this).css('background', 'yellow');
-    //     })
-    //
-    // })
+    $('ol').each(function(index, element) {
+        console.log(element);
+        $(element).children().each(function(index) {
+            if (index % 2 === 0)
+                $(this).css('background', 'yellow');
+        })
+
+    })
 
 
 
