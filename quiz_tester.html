@@ -38,19 +38,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 
-    var locationName = {
+    // var locationName = {
+    //
+    //     address: "Monterey",
+    //     popupHTML: "<p>World Traveler</p>"
+    // };
+    // var marker;
+    // function placeMarkerAndPopup(info, token, map) {
+    //     geocode(info.address, token).then(function(coordinates) {
+    //
+    //         console.log(coordinates);
+    //         // var popup = new mapboxgl.Popup()
+    //         //     .setHTML(info.popupHTML);
+    //             marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //         //     .setPopup(popup);
+    //         // popup.addTo(map);
+    //     });
+    // }
 
-        address: "Monterey",
-        popupHTML: "<p>World Traveler</p>"
-    };
 
     $('#button').click(function() {
+        marker.remove();
         var input = $('#search-box').val();
         // console.log(input)
 
         locationName = {
-            address: input,
-            popupHTML: "<p>World Traveler</p>"
+            address: input
+            // popupHTML: "<p>World Traveler</p>"
         }
 
         placeMarkerAndPopup(locationName, accessToken, map)
@@ -79,15 +95,17 @@
         geocode(info.address, token).then(function(coordinates) {
 
             console.log(coordinates);
-            var popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
-            var marker = new mapboxgl.Marker()
+            // var popup = new mapboxgl.Popup()
+            //     .setHTML(info.popupHTML);
+            marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
                 .addTo(map)
-                .setPopup(popup);
-            popup.addTo(map);
+            //     .setPopup(popup);
+            // popup.addTo(map);
         });
     }
+
+
 
     // placeMarkerAndPopup(locationName, accessToken, map);
     // Work in progress
