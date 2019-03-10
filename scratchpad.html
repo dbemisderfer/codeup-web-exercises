@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Scratchpad</title>
 </head>
 <body>
 
+
+<script src="js/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function() {
+        "use strict";
+
+        //     // without block scope
+    //     for (var i = 0; i < 10; i++) {
+    //         // ...
+    //         // console.log(i); // 10
+    //     }
+    //     console.log(i); // 10
+    //
+
+
+        ///////////////////////////////////////////
+        //////////// Maskify Function /////////////
+        ///////////////////////////////////////////
+        // Usually when you buy something, you're asked whether your credit card number,
+        // phone number or answer to your most secret question is still correct. However,
+        // since someone could look over your shoulder, you don't want that shown on your
+        // screen. Instead, we mask it.
+        // Your task is to write a function maskify, which changes all but the last four
+        // characters into '#'.
+
+        function maskify(string) {
+            var output = '';
+            var arr = [];
+            var hashtag = '#';
+            var maskedArea = string.length - 4
+            console.log(string.length);
+            console.log(string.substring(maskedArea));
+            var lastFour = string.substring(maskedArea)
+            arr.push(hashtag.repeat(maskedArea));
+            arr.push(string.substring(maskedArea))
+            // arr.push(hashtag.repeat(maskedArea))
+            console.log(arr);
+            output = arr.join("");
+            console.log(output);
+
+
+
+            return output;
+        }
+
+        maskify('abcd')
+
+        ///////////////////////////////////////////
+        /////////// Divisors Function /////////////
+        ///////////////////////////////////////////
+        // Create a function named divisors/Divisors that takes an integer n > 1 and
+        // returns an array with all of the integer's divisors(except for 1 and the
+        // number itself), from smallest to largest. If the number is prime return the
+        // string '(integer) is prime'.
+
+        // var input = prompt('Please enter a positive whole number.');
+
+        // console.log(input);
+
+
+            // var input = 25;
+        // function findDivisors(input) {
+        //     var output = [];
+        //     for (var x = 1; x < input; x += 1) {
+        //         // console.log(x);
+        //         if (input % x === 0) {
+        //             output += output.push(x);
+        //
+        //         }
+        //
+        //         console.log(output);
+        //         // return output;
+        //
+        //     }
+        //
+        // }
+        //
+        // findDivisors(16);
+
+        // for (var i = 1; i < 100; i++) {
+        //
+        //     if (i % 2 !== 0) {
+        //         // number isn't even
+        //         // odd numbers aren't as cool
+        //         // skip the rest of the loop and continue with the next iteration
+        //         continue;
+        //     }
+        //
+        //     console.log('Here is a lovely even number: ' + i);
+        // }
+
+
+
+
+
+
+    });
+
+
+
+
+</script>
 </body>
 </html>
