@@ -40,19 +40,24 @@
             console.log(string.length);
             console.log(string.substring(maskedArea));
             var lastFour = string.substring(maskedArea)
-            arr.push(hashtag.repeat(maskedArea));
-            arr.push(string.substring(maskedArea))
             // arr.push(hashtag.repeat(maskedArea))
-            console.log(arr);
-            output = arr.join("");
-            console.log(output);
+            if (string.length >= 4) {
+                arr.push(hashtag.repeat(maskedArea));
+                arr.push(string.substring(maskedArea));
+                output = arr.join("");
+                console.log(output);
+            } else {
+                output = string;
+                console.log(output);
+            }
+
 
 
 
             return output;
         }
 
-        maskify('abcd')
+        maskify('')
 
         ///////////////////////////////////////////
         /////////// Divisors Function /////////////
