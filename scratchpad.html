@@ -20,6 +20,20 @@
     //     }
     //     console.log(i); // 10
     //
+        ///////////////////////////////////////////
+        /////////// sumDouble Function ////////////
+        ///////////////////////////////////////////
+        // Given two int values, return their sum. Unless the two values are the same,
+        // then return double their sum.
+
+        function sumDouble(x,y) {
+            if (x === y) {
+                return (x + y) * 2;
+            }
+            return (x + y);
+        }
+
+        // console.log(sumDouble(27, 27));
 
 
         ///////////////////////////////////////////
@@ -32,32 +46,51 @@
         // Your task is to write a function maskify, which changes all but the last four
         // characters into '#'.
 
-        function maskify(string) {
-            var output = '';
-            var arr = [];
-            var hashtag = '#';
-            var maskedArea = string.length - 4
-            console.log(string.length);
-            console.log(string.substring(maskedArea));
-            var lastFour = string.substring(maskedArea)
-            // arr.push(hashtag.repeat(maskedArea))
-            if (string.length >= 4) {
-                arr.push(hashtag.repeat(maskedArea));
-                arr.push(string.substring(maskedArea));
-                output = arr.join("");
-                console.log(output);
-            } else {
-                output = string;
-                console.log(output);
-            }
+        // function maskify(string) {
+        //     var output = '';
+        //     var arr = [];
+        //     var hashtag = '#';
+        //     var maskedArea = string.length - 4
+        //     console.log(string.length);
+        //     console.log(string.substring(maskedArea));
+        //     var lastFour = string.substring(maskedArea)
+        //     // arr.push(hashtag.repeat(maskedArea))
+        //     if (string.length >= 4) {
+        //         arr.push(hashtag.repeat(maskedArea));
+        //         arr.push(string.substring(maskedArea));
+        //         output = arr.join("");
+        //         console.log(output);
+        //     } else {
+        //         output = string;
+        //         console.log(output);
+        //     }
+        //
+        //
+        //
+        //
+        //     return output;
+        // }
+        //
+        // maskify('bemisderfer')
 
 
-
-
-            return output;
-        }
-
-        maskify('')
+        // //Alternate solution
+        // function maskify(cc) {
+        //     var maskedString = "";
+        //     for(var i = 0; i < cc.length; i++) {
+        //         if(i < cc.length - 4) {
+        //             maskedString = maskedString + "#";
+        //             console.log(maskedString);
+        //         } else {
+        //             maskedString = maskedString + cc.charAt(i);
+        //             console.log(maskedString);
+        //         };
+        //     }
+        //     console.log(maskedString);
+        //     return maskedString;
+        // }
+        //
+        // maskify('bemisderfer');
 
         ///////////////////////////////////////////
         /////////// Divisors Function /////////////
@@ -72,24 +105,42 @@
         // console.log(input);
 
 
-            // var input = 25;
-        // function findDivisors(input) {
-        //     var output = [];
-        //     for (var x = 1; x < input; x += 1) {
-        //         // console.log(x);
-        //         if (input % x === 0) {
-        //             output += output.push(x);
-        //
-        //         }
-        //
-        //         console.log(output);
-        //         // return output;
-        //
-        //     }
-        //
-        // }
-        //
-        // findDivisors(16);
+
+        function findDivisors(input) {
+            var output = [];
+            for (var x = 2; x < input; x += 1) {
+                // console.log(x);
+                if (input % x === 0) {
+
+                    output.push(x);
+                    // console.log(output);
+
+                }
+                // console.log(output);
+
+                if (output.length === 0){
+                    // console.log('' + input + ' is a prime number');
+                    return '' + input + ' is a prime number';
+                }
+
+
+            }
+            return output;
+        }
+
+        // console.log(findDivisors(18));
+
+
+        // Alternate solution
+        //function divisors(integer) {
+    //     var divisors = [];
+    //     for (var i = 2; i < integer - 1; i++){
+    //         if (integer % i === 0) divisors.push(i);
+    //     }
+    //     if (divisors.length === 0) return '' + integer + ' is prime';
+    //     return divisors;
+    //  }
+
 
         // for (var i = 1; i < 100; i++) {
         //
@@ -103,6 +154,40 @@
         //     console.log('Here is a lovely even number: ' + i);
         // }
 
+
+        function notString (str) {
+            if (str === null || str === undefined || str.substring(0, 3) === 'not') {
+                return str;
+            }
+            return `not ${str}`;
+        }
+
+        // console.log(notString('good enough'));
+
+
+        /////////////////////////////////
+        //////// Weekly Push-ups ////////
+        /////////////////////////////////
+        function multiply(num1, num2) {
+            var sum = 0;
+            for (var i = 0; i < num2; i++) {
+                sum += num1;
+            }
+            return sum;
+        }
+
+        // console.log('function multiply: ' + multiply(8, 4));
+
+
+        function power(base, exponent) {
+            var product = 1;
+            for (var i = 0; i < exponent; i++) {
+                product *= base;
+            }
+            return product;
+        }
+
+        // console.log('function power: ' + power(3, 2));
 
 
 
