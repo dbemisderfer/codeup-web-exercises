@@ -26,69 +26,80 @@ const users = [
     name: 'justin',
     email: 'justin@codeup.com',
     languages: ['html', 'css', 'javascript', 'php']
-  },
-  {
-    name: 'dwight',
-    email: 'dwight.bemisderfer@gmail.com',
-    languages: ['html', 'css', 'javascript']
   }
 ];
+
+// console.log(users);
 
 // TODO: fill in your name and email and add some programming languages you know
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-
 // var name = 'your_name_here';
 // var email = '';
 // var languages = [];
-
 const name = 'dwight';
-name = "ted";
+// name = 'no_it_is_not'; // 'TypeError: Assignment to constant variable' error is given
+// console.log(name);
 const email = 'dwight.bemisderfer@gmail.com';
-email = 'giddyupgo@yahoo.com'
 const languages = ['html', 'css', 'javascript'];
-languages = ['hip', 'hop', 'array'];
-
 
 // TODO: rewrite the object literal using object property shorthand
-
 // users.push({
 //   name: name,
 //   email: email,
 //   languages: languages
 // });
+users.push({
+  name,
+  email,
+  languages
+});
 
-users.push({name, email, languages});
+// console.log(users);
 
 // TODO: replace `var` with `let` in the following variable declarations
-
 // var emails = [];
 // var names = [];
-
 let emails = [];
 let names = [];
 
 // TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
+// users.forEach(function(user) {
+//   return emails.push(user.email);
+// });
+users.forEach((user) => {
   return emails.push(user.email);
 });
 
-users.forEach (user) => emails.push(user.email);
-
-users.forEach(function(user) {
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
+users.forEach((user) => {
   return names.push(user.name);
 });
-
-users.forEach (user) => names.push(user.name);
 
 // TODO: replace `var` with `let` in the following declaration
 // var developers = [];
 let developers = [];
 
+users.forEach(function({name, email, languages}) {
+  // TODO: rewrite the code below to use object destructuring assignment
+  //       note that you can also use destructuring assignment in the function
+  //       parameter definition
+  // const name = user.name;
+  // console.log(name);
+  // const email = user.email;
+  // console.log(email);
+  // const languages = user.languages;
+  // console.log(languages);
+
+  // TODO: rewrite the assignment below to use template strings
+  developers.push(`${name}'s email is ${email} and ${name} knows ${languages.join(' and ')}`);
+  // console.log(developers);
+});
+
 // users.forEach(function(user) {
-//
-//   console.log(user)
 //   // TODO: rewrite the code below to use object destructuring assignment
 //   //       note that you can also use destructuring assignment in the function
 //   //       parameter definition
@@ -96,39 +107,26 @@ let developers = [];
 //   const email = user.email;
 //   const languages = user.languages;
 //
-//
 //   // TODO: rewrite the assignment below to use template strings
 //   developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 // });
-
-users.forEach(function({name, email, languages}) {
-  console.log('test' ${name});
-  developers.push(${name} '\'s email is' ${email}'.' ${name} 'knows' ${languages.join(', ')});
-
-
-});
-
-const user = {name: '', email: '', languages: []};
-const {name, email, languages} = user;
-
-// const name = 'codeup';
-// console.log('Hello, ' + name + '!');
-// // same as
-// console.log(`Hello, ${name}!`);
-
-
-
-
-
 
 // TODO: Use `let` for the following variable
 // var list = '<ul>';
 let list = '<ul>';
 
 // TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
-
-  // TODO: rewrite the assignment below to use template strings
-  list += '<li>' + developer + '</li>';
-});
+for (let developer of developers) {
+  list += `<li>${developer}</li>`;
+}
 list += '</ul>';
+
+// console.log(list);
+
+// // TODO: rewrite the following loop to use a for..of loop
+// developers.forEach(function (developer) {
+//
+//   // TODO: rewrite the assignment below to use template strings
+//   list += '<li>' + developer + '</li>';
+// });
+// list += '</ul>';
