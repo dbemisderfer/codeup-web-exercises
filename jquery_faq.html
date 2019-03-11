@@ -241,6 +241,14 @@
         // $('#national-parks-heading').next().css('background-color', 'salmon');
 
 
+        // Bonus Exercises (Attributes and CSS)
+        // When any one dt is clicked, the element that was clicked should be highlighted.
+
+        $('dt').click(function() {
+            $(this).css('background', 'yellow');
+            $(this).next().css('background', 'yellow');
+        })
+
     });
 
 
