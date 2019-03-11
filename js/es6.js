@@ -56,7 +56,9 @@ users.push({
   languages
 });
 
-// console.log(users);
+// ******************************
+// console.log(users[users.length - 1].name); // outputs 'dwight' since it was the last entry
+// ******************************
 
 // TODO: replace `var` with `let` in the following variable declarations
 // var emails = [];
@@ -75,7 +77,7 @@ users.forEach((user) => {
 // users.forEach(function(user) {
 //   return names.push(user.name);
 // });
-users.forEach((user) => {
+users.forEach(user => { // same as above, but don't need parenthesis around 'user' when there is only one parameter
   return names.push(user.name);
 });
 
@@ -83,7 +85,7 @@ users.forEach((user) => {
 // var developers = [];
 let developers = [];
 
-users.forEach(function({name, email, languages}) {
+users.forEach(({name, email, languages}) => {
   // TODO: rewrite the code below to use object destructuring assignment
   //       note that you can also use destructuring assignment in the function
   //       parameter definition
@@ -98,6 +100,30 @@ users.forEach(function({name, email, languages}) {
   developers.push(`${name}'s email is ${email} and ${name} knows ${languages.join(' and ')}`);
   // console.log(developers);
 });
+
+
+// Alternate solution
+users.forEach((user) => {
+  // TODO: rewrite the code below to use object destructuring assignment
+  //       note that you can also use destructuring assignment in the function
+  //       parameter definition
+  // const name = user.name;
+  // console.log(name);
+  // const email = user.email;
+  // console.log(email);
+  // const languages = user.languages;
+  // console.log(languages);
+
+  const {name, email, languages} = user;
+
+
+
+  // TODO: rewrite the assignment below to use template strings
+  developers.push(`${name}'s email is ${email} and ${name} knows ${languages.join(' and ')}`);
+
+});
+
+console.log(developers);
 
 // users.forEach(function(user) {
 //   // TODO: rewrite the code below to use object destructuring assignment
