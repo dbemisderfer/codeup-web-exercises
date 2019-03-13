@@ -73,7 +73,7 @@ const family = [
 // Use map, filter, and reduce to:
 //
 // 1. Create an array of the first letters of each fruit
-const firstLetters = fruits.reduce((list, fruit) => {
+let firstLetters = fruits.reduce((list, fruit) => {
     for (let fruit of fruits) {
         console.log(fruit[0]);
         list.add(fruit[0]);
@@ -82,12 +82,19 @@ const firstLetters = fruits.reduce((list, fruit) => {
     return list;
 
 }, new Set);
+// console.log(firstLetters);
+
+firstLetters = Array.from(firstLetters);
 
 console.log(firstLetters);
+
 
 //
 // 1. Create array of user objects based on the customers array of objects (each
 // user object should just have name and age properties)
+
+
+
 //
 // 1. Create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
