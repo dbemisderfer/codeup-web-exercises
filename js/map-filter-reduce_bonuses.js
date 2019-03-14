@@ -110,14 +110,22 @@ const family = [
 // 1. Create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
 //
+// SKIP THIS ONE
+//
 // 1. Determine the average age of all the customers
-let averageAge = customers.reduce((total, currentAge) {
-    let ageAverage = '';
-    for (let customer of customers) {
-        console.log(customer.age);
-    }
+// let customerAge = customers.reduce((total, customer) => {
+//     // console.log(customer.age);
+//     return total + customer.age
+//
+//
+// }, 0);
+//
+// // console.log(averageAge);
+//
+// let averageAge = customerAge / customers.length;
+//
+// console.log(`The average age of all of the customers is: ${averageAge}`);
 
-}, 0);
 //
 // 1. Create a function `makeSuperPet()` that takes in the pets array as input and
 // returns a single pet object with the following shape...
@@ -129,6 +137,49 @@ let averageAge = customers.reduce((total, currentAge) {
 //         breed: THE_FIRST_LETTERS_OF_ALL_PET_BREEDS_CONCATENATATED_INTO_A_SINGLE_STRING
 //     }
 //     ```
+
+const makeObj = function(array) {
+
+
+}
+
+const petNames = pets.reduce((total, pet) => {
+    // console.log(pet.name);
+    return total + pet.name;
+}, '');
+
+// console.log(petNames);
+
+const petAges = pets.reduce((total, pet) => {
+    // console.log(pet.age);
+    return total + pet.age;
+}, 0);
+
+// console.log(petAges);
+
+const firstLetters = pets.reduce((total, pet) => {
+    // console.log(pet.breed[0]);
+    return total + pet.breed[0];
+}, '');
+
+// console.log(firstLetters);
+
+let returnObj = function(name, age, breed){
+    return {
+        name: name,
+        age: age,
+        breed: breed,
+        }
+    }
+
+let finalAnswer = returnObj(petNames, petAges, firstLetters);
+
+console.log(finalAnswer);
+
+
+
+
+
 
 // 1. Create a function that takes in an array of pets and returns an array of the
 // length of first names for pugs only. Your output for the given input should
