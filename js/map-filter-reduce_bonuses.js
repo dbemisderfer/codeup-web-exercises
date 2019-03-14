@@ -73,33 +73,51 @@ const family = [
 // Use map, filter, and reduce to:
 //
 // 1. Create an array of the first letters of each fruit
-let firstLetters = fruits.reduce((list, fruit) => {
-    for (let fruit of fruits) {
-        console.log(fruit[0]);
-        list.add(fruit[0]);
-    }
-
-    return list;
-
-}, new Set);
+// let firstLetters = fruits.reduce((list, fruit) => {
+//     for (let fruit of fruits) {
+//         console.log(fruit[0]);
+//         list.add(fruit[0]);
+//     }
+//
+//     return list;
+//
+// }, new Set);
+// // console.log(firstLetters);
+//
+// firstLetters = Array.from(firstLetters);
+//
 // console.log(firstLetters);
-
-firstLetters = Array.from(firstLetters);
-
-console.log(firstLetters);
 
 
 //
 // 1. Create array of user objects based on the customers array of objects (each
 // user object should just have name and age properties)
 
-
+// let nameAge = customers.reduce((total, currentCustomer) => {
+//     let customerNames = currentCustomer.name;
+//     for (let customer of customers) {
+//         total.add(customerNames);
+//         // console.log(customer.name);
+//     }
+//
+//     return total;
+// }, new Set);
+//
+// nameAge = Array.from(nameAge);
+// console.log(nameAge);
 
 //
 // 1. Create an array of civil servant customers (teachers and police officers)
 // containing the same properties as the objects on the customers objects
 //
 // 1. Determine the average age of all the customers
+let averageAge = customers.reduce((total, currentAge) {
+    let ageAverage = '';
+    for (let customer of customers) {
+        console.log(customer.age);
+    }
+
+}, 0);
 //
 // 1. Create a function `makeSuperPet()` that takes in the pets array as input and
 // returns a single pet object with the following shape...
