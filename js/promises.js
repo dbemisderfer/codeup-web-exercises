@@ -59,9 +59,7 @@
 // api documentation to achieve this.
 
 const lastCommit = (username) => {
-    // return new Promise((resolve, reject) => {
-    //     resolve(`Last commit made by ${username} was: `)
-    // })
+
 
     return fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': `token ${GITHUB_TOKEN}`}})
         .then(data => {
@@ -82,4 +80,39 @@ const lastCommit = (username) => {
 
 
 lastCommit('dbemisderfer').then((data) => console.log(data));
+
+// function makeRequest() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random() > 0.1) {
+//                 resolve('Here is your data: ...');
+//             } else {
+//                 reject('Network Connection Error!');
+//             }
+//         }, 1500);
+//     });
+// }
+//
+// const request = makeRequest();
+// console.log(request); // pending promise
+// request.then(data => console.log('Promise resolved!', data));
+// // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+// request.catch(error => console.log('Promise rejected!', error));
+// // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+// Promise.resolve('one').then((one) => {
+//     setTimeout(() => {
+//         console.log(one);
+//     }, 3000);
+//     return 'two';
+// }).then((two) => {
+//     setTimeout(() => {
+//         console.log(two);
+//     }, 6000);
+//     return 'three';
+// }).then((three) => {
+//     setTimeout(() => {
+//         console.log(three);
+//     }, 9000);
+// });
 
