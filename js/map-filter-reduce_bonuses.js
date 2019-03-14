@@ -126,9 +126,14 @@ const family = [
 //
 // console.log(`The average age of all of the customers is: ${averageAge}`);
 
-//
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+///////////////////////////////////////////////////
+////////////////// NEED TO UPLOAD /////////////////
+///////////////////////////////////////////////////
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 // 1. Create a function `makeSuperPet()` that takes in the pets array as input and
 // returns a single pet object with the following shape...
+
 
 // ```js
 //     {
@@ -139,46 +144,40 @@ const family = [
 //     ```
 
 const makeObj = function(array) {
-
-
-}
-
-const petNames = pets.reduce((total, pet) => {
-    // console.log(pet.name);
-    return total + pet.name;
-}, '');
+    const petNames = array.reduce((total, pet) => {
+        // console.log(pet.name);
+        return total + pet.name;
+    }, '');
 
 // console.log(petNames);
 
-const petAges = pets.reduce((total, pet) => {
-    // console.log(pet.age);
-    return total + pet.age;
-}, 0);
+    const petAges = array.reduce((total, pet) => {
+        // console.log(pet.age);
+        return total + pet.age;
+    }, 0);
 
 // console.log(petAges);
 
-const firstLetters = pets.reduce((total, pet) => {
-    // console.log(pet.breed[0]);
-    return total + pet.breed[0];
-}, '');
+    const firstLetters = array.reduce((total, pet) => {
+        // console.log(pet.breed[0]);
+        return total + pet.breed[0];
+    }, '');
 
 // console.log(firstLetters);
 
-let returnObj = function(name, age, breed){
-    return {
-        name: name,
-        age: age,
-        breed: breed,
+    let returnObj = function(name, age, breed){
+        return {
+            name: name,
+            age: age,
+            breed: breed,
         }
     }
 
-let finalAnswer = returnObj(petNames, petAges, firstLetters);
+    return returnObj(petNames, petAges, firstLetters);
 
-console.log(finalAnswer);
+}
 
-
-
-
+console.log(makeObj(pets));
 
 
 // 1. Create a function that takes in an array of pets and returns an array of the
