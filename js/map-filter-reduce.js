@@ -212,7 +212,7 @@ const linguages = users.reduce((list, user) => { // list = accumulators
     return list;
 }, new Set); // Set is used here instead of {}, because .add will only push to Set
 // console.log(linguages);
-// console.log(Array.from(linguages).sort()); // Array.from turns Set objects into arrays
+console.log(Array.from(linguages).sort()); // Array.from turns Set objects into arrays
 
 
 //////////////////////////////////////////////////////////
