@@ -93,15 +93,15 @@ const family = [
 // 1. Create array of user objects based on the customers array of objects (each
 // user object should just have name and age properties)
 
-// let nameAge = customers.reduce((total, currentCustomer) => {
-//     let customerNames = currentCustomer.name;
-//     for (let customer of customers) {
-//         total.add(customerNames);
-//         // console.log(customer.name);
-//     }
-//
-//     return total;
-// }, new Set);
+let nameAge = customers.reduce((total, currentCustomer) => {
+    let customerNames = currentCustomer.name;
+    for (let customer of customers) {
+        total.add(customerNames);
+        // console.log(customer.name);
+    }
+
+    return total;
+}, new Set);
 //
 // nameAge = Array.from(nameAge);
 // console.log(nameAge);
@@ -142,48 +142,70 @@ const family = [
 //         breed: THE_FIRST_LETTERS_OF_ALL_PET_BREEDS_CONCATENATATED_INTO_A_SINGLE_STRING
 //     }
 //     ```
-
-const makeObj = function(array) {
-    const petNames = array.reduce((total, pet) => {
-        // console.log(pet.name);
-        return total + pet.name;
-    }, '');
-
-// console.log(petNames);
-
-    const petAges = array.reduce((total, pet) => {
-        // console.log(pet.age);
-        return total + pet.age;
-    }, 0);
-
-// console.log(petAges);
-
-    const firstLetters = array.reduce((total, pet) => {
-        // console.log(pet.breed[0]);
-        return total + pet.breed[0];
-    }, '');
-
-// console.log(firstLetters);
-
-    let returnObj = function(name, age, breed){
-        return {
-            name: name,
-            age: age,
-            breed: breed,
-        }
-    }
-
-    return returnObj(petNames, petAges, firstLetters);
-
-}
-
-console.log(makeObj(pets));
+//
+// const makeObj = function(array) {
+//     const petNames = array.reduce((total, pet) => {
+//         // console.log(pet.name);
+//         return total + pet.name;
+//     }, '');
+//
+// // console.log(petNames);
+//
+//     const petAges = array.reduce((total, pet) => {
+//         // console.log(pet.age);
+//         return total + pet.age;
+//     }, 0);
+//
+// // console.log(petAges);
+//
+//     const firstLetters = array.reduce((total, pet) => {
+//         // console.log(pet.breed[0]);
+//         return total + pet.breed[0];
+//     }, '');
+//
+// // console.log(firstLetters);
+//
+//     let returnObj = function(name, age, breed){
+//         return {
+//             name: name,
+//             age: age,
+//             breed: breed,
+//         }
+//     }
+//
+//     return returnObj(petNames, petAges, firstLetters);
+//
+// }
+//
+// console.log(makeObj(pets));
 
 
 // 1. Create a function that takes in an array of pets and returns an array of the
 // length of first names for pugs only. Your output for the given input should
 // be [3, 6] for 'Bud' and 'Bowser'
 //
+
+const nameLengthArray = (array) => {
+    const petBreed = array.filter((pet) => {
+        return pet.breed === 'Pug';
+    });
+
+
+    let nameLength = petBreed.reduce((total, dog) => {
+        let dogNames = dog.name.length;
+        for (let pug of petBreed) {
+            total.add(dogNames);
+        }
+        return total;
+    }, new Set);
+
+    nameLength = Array.from(nameLength);
+
+    return nameLength
+}
+
+console.log(nameLengthArray(pets));
+
 // 1. Create a function `getFemaleFamilyMembers()` that when given the family
 // variable as an argument, returns an array of female family member names
 //
