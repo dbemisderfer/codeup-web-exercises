@@ -29,9 +29,9 @@ export default {sayHello}
 
 
 
-// const sayHello = () => {
-//     return "Nice message"
-// }
+const sayHello = () => {
+    return "Nice message"
+}
 //
 // // Instructor solution [Require]
-// module.exports.newBinding = sayHello;
+module.exports.newBinding = sayHello;

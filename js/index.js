@@ -27,5 +27,5 @@ console.log(banana.sayHello());
 // console.log(sayHello('Hello there.'));
 
 // Instructor solution [Require]
-// const message = require('./say-hello.js');
-// console.log(message.newBinding())
+const message = require('./say-hello.js');
+console.log(message.newBinding())

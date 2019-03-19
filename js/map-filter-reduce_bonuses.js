@@ -73,9 +73,10 @@ const family = [
 // Use map, filter, and reduce to:
 //
 // 1. Create an array of the first letters of each fruit
+
 // let firstLetters = fruits.reduce((list, fruit) => {
 //     for (let fruit of fruits) {
-//         console.log(fruit[0]);
+//         // console.log(fruit[0]);
 //         list.add(fruit[0]);
 //     }
 //
@@ -86,22 +87,30 @@ const family = [
 //
 // firstLetters = Array.from(firstLetters);
 //
-// console.log(firstLetters);
-
+// // console.log(firstLetters);
+//
+// /////////////////////////////////////////
+// // Alternate (more efficient) solution //
+// /////////////////////////////////////////
+// let codeup = fruits.map((fruit) => {
+//     return fruit[0];
+// })
+//
+// console.log(codeup);
 
 //
 // 1. Create array of user objects based on the customers array of objects (each
 // user object should just have name and age properties)
 
-let nameAge = customers.reduce((total, currentCustomer) => {
-    let customerNames = currentCustomer.name;
-    for (let customer of customers) {
-        total.add(customerNames);
-        // console.log(customer.name);
-    }
-
-    return total;
-}, new Set);
+// let nameAge = customers.reduce((total, currentCustomer) => {
+//     let customerNames = currentCustomer.name;
+//     for (let customer of customers) {
+//         total.add(customerNames);
+//         // console.log(customer.name);
+//     }
+//
+//     return total;
+// }, new Set);
 //
 // nameAge = Array.from(nameAge);
 // console.log(nameAge);
@@ -179,35 +188,41 @@ let nameAge = customers.reduce((total, currentCustomer) => {
 //
 // console.log(makeObj(pets));
 
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+///////////////////////////////////////////////////
+////////////////// NEED TO UPLOAD /////////////////
+///////////////////////////////////////////////////
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 // 1. Create a function that takes in an array of pets and returns an array of the
 // length of first names for pugs only. Your output for the given input should
 // be [3, 6] for 'Bud' and 'Bowser'
 //
 
-const nameLengthArray = (array) => {
-    const petBreed = array.filter((pet) => {
-        return pet.breed === 'Pug';
-    });
-
-
-    let nameLength = petBreed.reduce((total, dog) => {
-        let dogNames = dog.name.length;
-        for (let pug of petBreed) {
-            total.add(dogNames);
-        }
-        return total;
-    }, new Set);
-
-    nameLength = Array.from(nameLength);
-
-    return nameLength
-}
-
-console.log(nameLengthArray(pets));
+// const nameLengthArray = (array) => {
+//     const petBreed = array.filter((pet) => {
+//         return pet.breed === 'Pug';
+//     });
+//
+//
+//     let nameLength = petBreed.reduce((total, dog) => {
+//         let dogNames = dog.name.length;
+//         for (let pug of petBreed) {
+//             total.add(dogNames);
+//         }
+//         return total;
+//     }, new Set);
+//
+//     nameLength = Array.from(nameLength);
+//
+//     return nameLength
+// }
+//
+// console.log(nameLengthArray(pets));
 
 // 1. Create a function `getFemaleFamilyMembers()` that when given the family
 // variable as an argument, returns an array of female family member names
+
+
 //
 // 1. Create a function `makeLongPetString()` that when given the variable of pets,
 //     returns a string of all property values with dashes separating each property
@@ -291,5 +306,82 @@ const users = [
 // 1. Use `.reduce` to get a unique list of the languages the codeup instructors
 // know
 
+const salesPeople = [
+    {name: 'Jim Halpert', sales: 100},
+    {name: 'Dwight Schrute', sales: 50},
+    {name: 'Andy Bernard', sales: 150},
+];
+
+
+
+// function countWords(sentence) {
+//     const words = sentence.split(' '); // transform a sentence into an array of words
+//
+//     const wordCountObject = words.reduce((wordCounts, word) => {
+//         if (typeof wordCounts[word] === 'undefined') {
+//             // if the word is not yet present in our object, set it's value to 1
+//             wordCounts[word] = 1;
+//         } else {
+//             // otherwise increment the existing count
+//             wordCounts[word] += 1;
+//         }
+//         return wordCounts;
+//     }, {}); // start with an empty object
+//
+//     return wordCountObject;
+// }
+//
+// const finalCount = countWords('Mary had a little lamb little lamb little lamb');
+//
+// console.log(finalCount);
+
+
+
+//
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (Math.random() > 0.5) {
+//             resolve();
+//         } else {
+//             reject();
+//         }
+//     }, 1500);
+//
+// }).then(() => console.log('resolved!')).catch(() => console.log('rejected!'));
+// console.log(myPromise); // a pending promise
+
+
+
+// // function makeRequest() {
+// const request = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (Math.random() > 0.5) {
+//                 resolve('Here is your data: ...');
+//             } else {
+//                 reject('Network Connection Error!');
+//             }
+//         }, 1500);
+//     })
+//         .then(data => console.log('Promise resolved!', data))
+//         .catch(error => console.log('Promise rejected!', error));
+//     console.log(request); // pending promise
+// // }
+//
+// // const request = makeRequest();
+//
+//
+// // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+//
+// // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+Promise.resolve('one').then((one) => {
+    console.log(one);
+    return 'two';
+}).then((two) => {
+    console.log(two);
+    return 'three';
+}).then((three) => {
+    console.log(three);
+});
 
 
