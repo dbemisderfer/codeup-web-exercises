@@ -152,7 +152,7 @@ const family = [
 //     }
 //     ```
 //
-// const makeObj = function(array) {
+// const makeSuperPet = function(array) {
 //     const petNames = array.reduce((total, pet) => {
 //         // console.log(pet.name);
 //         return total + pet.name;
@@ -186,7 +186,7 @@ const family = [
 //
 // }
 //
-// console.log(makeObj(pets));
+// console.log(makeSuperPet(pets));
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 ///////////////////////////////////////////////////
@@ -204,24 +204,33 @@ const family = [
 //     });
 //
 //
-//     let nameLength = petBreed.reduce((total, dog) => {
-//         let dogNames = dog.name.length;
-//         for (let pug of petBreed) {
-//             total.add(dogNames);
-//         }
-//         return total;
-//     }, new Set);
-//
-//     nameLength = Array.from(nameLength);
-//
-//     return nameLength
+//     // let nameLength = petBreed.reduce((total, dog) => {
+//     //     let dogNames = dog.name.length;
+//     //     for (let pug of petBreed) {
+//     //         total.add(dogNames);
+//     //     }
+//     //     return total;
+//     // }, new Set);
+//     //
+//     // nameLength = Array.from(nameLength);
+//     //
+//     // return nameLength
 // }
-//
+
 // console.log(nameLengthArray(pets));
 
 // 1. Create a function `getFemaleFamilyMembers()` that when given the family
 // variable as an argument, returns an array of female family member names
+//
+const getFemaleFamilyMembers = (array) => {
+    const femaleMembers = array.filter((female) => {
+        return female.gender === 'female';
+    });
+    console.log(femaleMembers);
 
+}
+
+getFemaleFamilyMembers(family);
 
 //
 // 1. Create a function `makeLongPetString()` that when given the variable of pets,
@@ -374,14 +383,14 @@ const salesPeople = [
 //
 // // if rejected, will log "Promise rejected!" and "Network Connection Error!"
 
-Promise.resolve('one').then((one) => {
-    console.log(one);
-    return 'two';
-}).then((two) => {
-    console.log(two);
-    return 'three';
-}).then((three) => {
-    console.log(three);
-});
+// Promise.resolve('one').then((one) => {
+//     console.log(one);
+//     return 'two';
+// }).then((two) => {
+//     console.log(two);
+//     return 'three';
+// }).then((three) => {
+//     console.log(three);
+// });
 
 
