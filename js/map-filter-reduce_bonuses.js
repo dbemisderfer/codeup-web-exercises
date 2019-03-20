@@ -219,23 +219,77 @@ const family = [
 
 // console.log(nameLengthArray(pets));
 
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+///////////////////////////////////////////////////
+////////////////// NEED TO UPLOAD /////////////////
+///////////////////////////////////////////////////
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 // 1. Create a function `getFemaleFamilyMembers()` that when given the family
 // variable as an argument, returns an array of female family member names
 //
-const getFemaleFamilyMembers = (array) => {
-    const femaleMembers = array.filter((female) => {
-        return female.gender === 'female';
-    });
-    console.log(femaleMembers);
+// const getFemaleFamilyMembers = (array) => {
+//     const femaleMembers = array.filter((female) => {
+//         return female.gender === 'female';
+//     });
+//     // console.log(femaleMembers);
+//
+//     // femaleMembers.forEach(function(femaleMember) {
+//     //     console.log(femaleMember.name);
+//     // })
+//     let newArray = [];
+//     for (let femaleMember of femaleMembers) {
+//         // console.log(femaleMember.name);
+//         newArray.push(femaleMember.name);
+//     }
+//
+//
+//
+//
+//
+//     return newArray;
+//
+// }
+//
+// console.log(getFemaleFamilyMembers(family));
 
-}
 
-getFemaleFamilyMembers(family);
+
 
 //
 // 1. Create a function `makeLongPetString()` that when given the variable of pets,
 //     returns a string of all property values with dashes separating each property
 // value
+
+// const makeLongPetString = (array) => {
+    const petNames = pets.map(pet => pet.name);
+    // console.log(petNames);
+
+    const petAges = pets.map(pet => pet.age);
+    // console.log(petAges);
+
+    const petBreeds = pets.map(pet => pet.breed);
+    // console.log(petBreeds);
+
+    let newArray = [petNames, petAges, petBreeds]
+    // console.log(newArray);
+
+    newArray = newArray.flat();
+    // console.log(newArray);
+
+    newArray = newArray.join('-');
+    console.log(newArray);
+// }
+
+
+
+// const petObjects = pets.reduce((list, currentPet) => {
+//     let petList = list + currentPet.breed;
+//     return petList;
+// }, "");
+
+// console.log(petObjects);
+
 //
 // 1. Create a function that when given an array of first names, returns an array
 // of the same names with a last name of Smith

@@ -147,6 +147,8 @@ function getLanguages(array) {
     return languageList;
 }
 
+
+
 function makeList(userString) {
     let userArray = [];
     userArray = userString.split(',');
@@ -211,8 +213,8 @@ const linguages = users.reduce((list, user) => { // list = accumulators
 
     return list;
 }, new Set); // Set is used here instead of {}, because .add will only push to Set
-// console.log(linguages);
-console.log(Array.from(linguages).sort()); // Array.from turns Set objects into arrays
+console.log(linguages);
+// console.log(Array.from(linguages).sort()); // Array.from turns Set objects into arrays
 
 
 //////////////////////////////////////////////////////////
