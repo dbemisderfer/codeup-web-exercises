@@ -135,11 +135,10 @@ const family = [
 //
 // console.log(`The average age of all of the customers is: ${averageAge}`);
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
-///////////////////////////////////////////////////
-////////////////// NEED TO UPLOAD /////////////////
-///////////////////////////////////////////////////
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+
+              ////////////////////////
+//////////////////    UPLOADED    /////////////////
+              ////////////////////////
 // 1. Create a function `makeSuperPet()` that takes in the pets array as input and
 // returns a single pet object with the following shape...
 
@@ -188,11 +187,9 @@ const family = [
 //
 // console.log(makeSuperPet(pets));
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
-///////////////////////////////////////////////////
-////////////////// NEED TO UPLOAD /////////////////
-///////////////////////////////////////////////////
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+             ////////////////////////
+//////////////////    UPLOADED    /////////////////
+             ////////////////////////
 // 1. Create a function that takes in an array of pets and returns an array of the
 // length of first names for pugs only. Your output for the given input should
 // be [3, 6] for 'Bud' and 'Bowser'
@@ -261,27 +258,33 @@ const family = [
 //     returns a string of all property values with dashes separating each property
 // value
 
-// const makeLongPetString = (array) => {
-    const petNames = pets.map(pet => pet.name);
-    // console.log(petNames);
+// // const makeLongPetString = (array) => {
+//     const petNames = pets.map(pet => pet.name);
+//     // console.log(petNames);
+//
+//     const petAges = pets.map(pet => pet.age);
+//     // console.log(petAges);
+//
+//     const petBreeds = pets.map(pet => pet.breed);
+//     // console.log(petBreeds);
+//
+//     let newArray = [petNames, petAges, petBreeds]
+//     // console.log(newArray);
+//
+//     newArray = newArray.flat();
+//     // console.log(newArray);
+//
+//     newArray = newArray.join('-');
+//     console.log(newArray);
+// // }
 
-    const petAges = pets.map(pet => pet.age);
-    // console.log(petAges);
 
-    const petBreeds = pets.map(pet => pet.breed);
-    // console.log(petBreeds);
+// const petOne = pets.filter();
+//
+// console.log(petOne);
 
-    let newArray = [petNames, petAges, petBreeds]
-    // console.log(newArray);
-
-    newArray = newArray.flat();
-    // console.log(newArray);
-
-    newArray = newArray.join('-');
-    console.log(newArray);
-// }
-
-
+// const threeOrMore = users.filter(user => user.languages.length >= 3);
+// // console.log(threeOrMore);
 
 // const petObjects = pets.reduce((list, currentPet) => {
 //     let petList = list + currentPet.breed;
@@ -299,8 +302,33 @@ const family = [
     // // output = ['Sally Smith', 'Fred Smith', 'Steve']
     // ```
 
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+///////////////////////////////////////////////////
+////////////////// NEED TO UPLOAD /////////////////
+///////////////////////////////////////////////////
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
 // 1. Create a function that when given an array of numbers, return the sum of
 // the even numbers
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sumOfAllEvenNumbers = (array) => {
+    const evenNumbers = array.filter(number => {
+        return number % 2 === 0;
+    })
+    // console.log(evenNumbers);
+
+    const sumOfEvens = evenNumbers.reduce((total, eachEven) => {
+        return total + eachEven;
+    }, 0);
+    // console.log(sumOfEvens);
+
+    return sumOfEvens;
+};
+
+console.log(sumOfAllEvenNumbers(numbers));
+
 //
 // 1. Create a function that when given an array of numbers, return the sum of all
 // numbers evenly divisible by 10
