@@ -217,11 +217,9 @@ const family = [
 // console.log(nameLengthArray(pets));
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
-///////////////////////////////////////////////////
-////////////////// NEED TO UPLOAD /////////////////
-///////////////////////////////////////////////////
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!//
+              ////////////////////////
+//////////////////    UPLOADED    /////////////////
+             ////////////////////////
 // 1. Create a function `getFemaleFamilyMembers()` that when given the family
 // variable as an argument, returns an array of female family member names
 //
