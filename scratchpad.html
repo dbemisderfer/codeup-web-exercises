@@ -6,257 +6,365 @@
 </head>
 <body>
 
+    <pre style="color: fuchsia; font-variant: small-caps; font-weight: bold; font-family: Arial, Ubuntu, sans-serif">Spaces            are            important.</pre>
+    <p style="word-spacing: 3.1em; font-variant: small-caps; font-weight: bold; font-family: Arial, Ubuntu, sans-serif">Spaces are important.</p>
 
 <script src="js/jquery-3.3.1.js"></script>
-<script src="js/map-filter-reduce.js"></script>
+<!--<script src="js/map-filter-reduce.js"></script>-->
 
 <script>
     $(document).ready(function() {
         "use strict";
+    //
+    //     function gooseFilter (birds) {
+    //         var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+    //         // var output = birds.filter(bird => !geese.includes(bird));
+    //         var output = birds.filter(function(bird) {
+    //             return !geese.includes(bird);
+    //         });
+    //
+    //         // for (let bird of birds) {
+    //         //     for (let goose of geese) {
+    //         //         if (bird !== goose) {
+    //         //             output.push(bird);
+    //         //         }
+    //         //     }
+    //         //     // output.push(bird);
+    //         //
+    //         // }
+    //         return output;
+    //         // return an array containing all of the strings in the input array except those that match strings in geese
+    //     };
+    //
+    //     console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish", "Honky Cat"]));
 
-        //     // without block scope
-    //     for (var i = 0; i < 10; i++) {
-    //         // ...
-    //         // console.log(i); // 10
+    //     //     // without block scope
+    // //     for (var i = 0; i < 10; i++) {
+    // //         // ...
+    // //         // console.log(i); // 10
+    // //     }
+    // //     console.log(i); // 10
+    // //
+    //
+    //     ///////////////////////////////////////////
+    //     //////////// teaParty Function ////////////
+    //     ///////////////////////////////////////////
+    //     // We are having a party with amounts of tea and candy. Return the int
+    //     // outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is
+    //     // good (1) if both tea and candy are at least 5. However, if either tea
+    //     // or candy is at least double the amount of the other one, the party is
+    //     // great (2). However, in all cases, if either tea or candy is less than 5,
+    //     // the party is always bad (0).
+    //     //
+    //     // Examples
+    //     //
+    //     // teaParty(6, 8) → 1
+    //     // teaParty(3, 8) → 0
+    //     // teaParty(20, 6) → 2
+    //
+    //     function teaParty(tea, candy) {
+    //         if ((tea >= candy*2 || candy >= tea*2) && (tea >= 5 && candy >= 5)){
+    //             return 2;
+    //         } else if (tea >= 5 && candy >= 5) {
+    //             return 1;
+    //         } else {
+    //             return 0;
+    //         }
     //     }
-    //     console.log(i); // 10
+    //
+    //     console.log(teaParty(6, 8));
+    //
+    //
+    //     ///////////////////////////////////////////
+    //     /////////// cigarParty Function ////////////
+    //     ///////////////////////////////////////////
+    //     // When squirrels get together for a party, they like to have cigars. A
+    //     // squirrel party is successful when the number of cigars is between 40 and
+    //     // 60, inclusive. Unless it is the weekend, in which case there is no upper
+    //     // bound on the number of cigars. Return true if the party with the given
+    //     // values is successful, or false otherwise.
+    //
+    //     function cigarParty(cigars, isWeekend) {
+    //         if (isWeekend) {
+    //             return cigars >= 40;
+    //         } else {
+    //             return cigars >= 40 && cigars <= 60;
+    //         }
+    //
+    //         // var output = true;
+    //         // var x = cigars;
+    //         // if ((40 <= x <=60) && isWeekend === false) {
+    //         //     console.log(output);
+    //         //     return output;
+    //         // } else if ((x >= 40) && isWeekend === true) {
+    //         //     console.log(output);
+    //         //     return output;
+    //         // } else { return !output };
+    //         //     console.log(output);
+    //         // return output
+    //     }
+    //
+    //     cigarParty(40, true);
+    //
+    //
+    //
+    //
+    //     ///////////////////////////////////////////
+    //     /////////// sumDouble Function ////////////
+    //     ///////////////////////////////////////////
+    //     // Given two int values, return their sum. Unless the two values are the same,
+    //     // then return double their sum.
+    //
+    //     function sumDouble(x,y) {
+    //         if (x === y) {
+    //             return (x + y) * 2;
+    //         }
+    //         return (x + y);
+    //     }
+    //
+    //     // console.log(sumDouble(27, 27));
+    //
+    //
+    //     ///////////////////////////////////////////
+    //     //////////// Maskify Function /////////////
+    //     ///////////////////////////////////////////
+    //     // Usually when you buy something, you're asked whether your credit card number,
+    //     // phone number or answer to your most secret question is still correct. However,
+    //     // since someone could look over your shoulder, you don't want that shown on your
+    //     // screen. Instead, we mask it.
+    //     // Your task is to write a function maskify, which changes all but the last four
+    //     // characters into '#'.
+    //
+    //     // function maskify(string) {
+    //     //     var output = '';
+    //     //     var arr = [];
+    //     //     var hashtag = '#';
+    //     //     var maskedArea = string.length - 4
+    //     //     console.log(string.length);
+    //     //     console.log(string.substring(maskedArea));
+    //     //     var lastFour = string.substring(maskedArea)
+    //     //     // arr.push(hashtag.repeat(maskedArea))
+    //     //     if (string.length >= 4) {
+    //     //         arr.push(hashtag.repeat(maskedArea));
+    //     //         arr.push(string.substring(maskedArea));
+    //     //         output = arr.join("");
+    //     //         console.log(output);
+    //     //     } else {
+    //     //         output = string;
+    //     //         console.log(output);
+    //     //     }
+    //     //
+    //     //
+    //     //
+    //     //
+    //     //     return output;
+    //     // }
+    //     //
+    //     // maskify('bemisderfer')
+    //
+    //
+    //     // //Alternate solution
+    //     // function maskify(cc) {
+    //     //     var maskedString = "";
+    //     //     for(var i = 0; i < cc.length; i++) {
+    //     //         if(i < cc.length - 4) {
+    //     //             maskedString = maskedString + "#";
+    //     //             console.log(maskedString);
+    //     //         } else {
+    //     //             maskedString = maskedString + cc.charAt(i);
+    //     //             console.log(maskedString);
+    //     //         };
+    //     //     }
+    //     //     console.log(maskedString);
+    //     //     return maskedString;
+    //     // }
+    //     //
+    //     // maskify('bemisderfer');
+    //
+    //     ///////////////////////////////////////////
+    //     /////////// Divisors Function /////////////
+    //     ///////////////////////////////////////////
+    //     // Create a function named divisors/Divisors that takes an integer n > 1 and
+    //     // returns an array with all of the integer's divisors(except for 1 and the
+    //     // number itself), from smallest to largest. If the number is prime return the
+    //     // string '(integer) is prime'.
+    //
+    //     // var input = prompt('Please enter a positive whole number.');
+    //
+    //     // console.log(input);
+    //
+    //
+    //
+    //     function findDivisors(input) {
+    //         var output = [];
+    //         for (var x = 2; x < input; x += 1) {
+    //             // console.log(x);
+    //             if (input % x === 0) {
+    //
+    //                 output.push(x);
+    //                 // console.log(output);
+    //
+    //             }
+    //             // console.log(output);
+    //
+    //             if (output.length === 0){
+    //                 // console.log('' + input + ' is a prime number');
+    //                 return '' + input + ' is a prime number';
+    //             }
+    //
+    //
+    //         }
+    //         return output;
+    //     }
+    //
+    //     // console.log(findDivisors(18));
+    //
+    //
+    //     // Alternate solution
+    //     //function divisors(integer) {
+    // //     var divisors = [];
+    // //     for (var i = 2; i < integer - 1; i++){
+    // //         if (integer % i === 0) divisors.push(i);
+    // //     }
+    // //     if (divisors.length === 0) return '' + integer + ' is prime';
+    // //     return divisors;
+    // //  }
+    //
+    //
+    //     // for (var i = 1; i < 100; i++) {
+    //     //
+    //     //     if (i % 2 !== 0) {
+    //     //         // number isn't even
+    //     //         // odd numbers aren't as cool
+    //     //         // skip the rest of the loop and continue with the next iteration
+    //     //         continue;
+    //     //     }
+    //     //
+    //     //     console.log('Here is a lovely even number: ' + i);
+    //     // }
+    //
+    //
+    //     function notString (str) {
+    //         if (str === null || str === undefined || str.substring(0, 3) === 'not') {
+    //             return str;
+    //         }
+    //         return `not ${str}`;
+    //     }
+    //
+    //     // console.log(notString('good enough'));
+    //
+    //
+    //     /////////////////////////////////
+    //     //////// Weekly Push-ups ////////
+    //     /////////////////////////////////
+    //     function multiply(num1, num2) {
+    //         var sum = 0;
+    //         for (var i = 0; i < num2; i++) {
+    //             sum += num1;
+    //         }
+    //         return sum;
+    //     }
+    //
+    //     // console.log('function multiply: ' + multiply(8, 4));
+    //
+    //
+    //     function power(base, exponent) {
+    //         var product = 1;
+    //         for (var i = 0; i < exponent; i++) {
+    //             product *= base;
+    //         }
+    //         return product;
+    //     }
+    //
+    //     // console.log('function power: ' + power(3, 2));
+    //
+    //
+    //
     //
 
-        ///////////////////////////////////////////
-        //////////// teaParty Function ////////////
-        ///////////////////////////////////////////
-        // We are having a party with amounts of tea and candy. Return the int
-        // outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is
-        // good (1) if both tea and candy are at least 5. However, if either tea
-        // or candy is at least double the amount of the other one, the party is
-        // great (2). However, in all cases, if either tea or candy is less than 5,
-        // the party is always bad (0).
-        //
-        // Examples
-        //
-        // teaParty(6, 8) → 1
-        // teaParty(3, 8) → 0
-        // teaParty(20, 6) → 2
-
-        function teaParty(tea, candy) {
-            if ((tea >= candy*2 || candy >= tea*2) && (tea >= 5 && candy >= 5)){
-                return 2;
-            } else if (tea >= 5 && candy >= 5) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-
-        console.log(teaParty(6, 8));
-
-
-        ///////////////////////////////////////////
-        /////////// cigarParty Function ////////////
-        ///////////////////////////////////////////
-        // When squirrels get together for a party, they like to have cigars. A
-        // squirrel party is successful when the number of cigars is between 40 and
-        // 60, inclusive. Unless it is the weekend, in which case there is no upper
-        // bound on the number of cigars. Return true if the party with the given
-        // values is successful, or false otherwise.
-
-        function cigarParty(cigars, isWeekend) {
-            if (isWeekend) {
-                return cigars >= 40;
-            } else {
-                return cigars >= 40 && cigars <= 60;
-            }
-
-            // var output = true;
-            // var x = cigars;
-            // if ((40 <= x <=60) && isWeekend === false) {
-            //     console.log(output);
-            //     return output;
-            // } else if ((x >= 40) && isWeekend === true) {
-            //     console.log(output);
-            //     return output;
-            // } else { return !output };
-            //     console.log(output);
-            // return output
-        }
-
-        cigarParty(40, true);
-
-
-
-
-        ///////////////////////////////////////////
-        /////////// sumDouble Function ////////////
-        ///////////////////////////////////////////
-        // Given two int values, return their sum. Unless the two values are the same,
-        // then return double their sum.
-
-        function sumDouble(x,y) {
-            if (x === y) {
-                return (x + y) * 2;
-            }
-            return (x + y);
-        }
-
-        // console.log(sumDouble(27, 27));
-
-
-        ///////////////////////////////////////////
-        //////////// Maskify Function /////////////
-        ///////////////////////////////////////////
-        // Usually when you buy something, you're asked whether your credit card number,
-        // phone number or answer to your most secret question is still correct. However,
-        // since someone could look over your shoulder, you don't want that shown on your
-        // screen. Instead, we mask it.
-        // Your task is to write a function maskify, which changes all but the last four
-        // characters into '#'.
-
-        // function maskify(string) {
-        //     var output = '';
-        //     var arr = [];
-        //     var hashtag = '#';
-        //     var maskedArea = string.length - 4
-        //     console.log(string.length);
-        //     console.log(string.substring(maskedArea));
-        //     var lastFour = string.substring(maskedArea)
-        //     // arr.push(hashtag.repeat(maskedArea))
-        //     if (string.length >= 4) {
-        //         arr.push(hashtag.repeat(maskedArea));
-        //         arr.push(string.substring(maskedArea));
-        //         output = arr.join("");
-        //         console.log(output);
-        //     } else {
-        //         output = string;
-        //         console.log(output);
-        //     }
-        //
-        //
-        //
-        //
-        //     return output;
-        // }
-        //
-        // maskify('bemisderfer')
-
-
-        // //Alternate solution
-        // function maskify(cc) {
-        //     var maskedString = "";
-        //     for(var i = 0; i < cc.length; i++) {
-        //         if(i < cc.length - 4) {
-        //             maskedString = maskedString + "#";
-        //             console.log(maskedString);
-        //         } else {
-        //             maskedString = maskedString + cc.charAt(i);
-        //             console.log(maskedString);
-        //         };
-        //     }
-        //     console.log(maskedString);
-        //     return maskedString;
-        // }
-        //
-        // maskify('bemisderfer');
-
-        ///////////////////////////////////////////
-        /////////// Divisors Function /////////////
-        ///////////////////////////////////////////
-        // Create a function named divisors/Divisors that takes an integer n > 1 and
-        // returns an array with all of the integer's divisors(except for 1 and the
-        // number itself), from smallest to largest. If the number is prime return the
-        // string '(integer) is prime'.
-
-        // var input = prompt('Please enter a positive whole number.');
-
-        // console.log(input);
-
-
-
-        function findDivisors(input) {
-            var output = [];
-            for (var x = 2; x < input; x += 1) {
-                // console.log(x);
-                if (input % x === 0) {
-
-                    output.push(x);
-                    // console.log(output);
-
-                }
-                // console.log(output);
-
-                if (output.length === 0){
-                    // console.log('' + input + ' is a prime number');
-                    return '' + input + ' is a prime number';
-                }
-
-
-            }
-            return output;
-        }
-
-        // console.log(findDivisors(18));
-
-
-        // Alternate solution
-        //function divisors(integer) {
-    //     var divisors = [];
-    //     for (var i = 2; i < integer - 1; i++){
-    //         if (integer % i === 0) divisors.push(i);
+    // function search(array, num) {
+    //
+    //     for (let item of array) {
+    //         if (item === num) {
+    //             // console.log(item);
+    //             return item;
+    //         }
     //     }
-    //     if (divisors.length === 0) return '' + integer + ' is prime';
-    //     return divisors;
-    //  }
+    // }
 
 
-        // for (var i = 1; i < 100; i++) {
-        //
-        //     if (i % 2 !== 0) {
-        //         // number isn't even
-        //         // odd numbers aren't as cool
-        //         // skip the rest of the loop and continue with the next iteration
-        //         continue;
-        //     }
-        //
-        //     console.log('Here is a lovely even number: ' + i);
-        // }
+    // function findThePalindrome(word) {
+    //     let test = false;
+    //     let wordArray = [];
+    //     let reverseWordArray = [];
+    //     let reverseWord = "";
+    //     wordArray = word.split("");
+    //     reverseWordArray = wordArray.reverse();
+    //     reverseWord = reverseWordArray.join("");
+    //     if (word === reverseWord) {
+    //         return true;
+    //     }
+    //
+    //     return test;
+    //     // return reverseWordArray;
+    // }
+    //
+    //
+    // console.log(findThePalindrome("hellolleh"));
 
-
-        function notString (str) {
-            if (str === null || str === undefined || str.substring(0, 3) === 'not') {
-                return str;
-            }
-            return `not ${str}`;
+    function generateFibonaccis(n) {
+        var fib = [1, 1];
+        for (var i = 2; i < n; i++) {
+            fib[i] = fib[i - 2] + fib[i - 1];
         }
-
-        // console.log(notString('good enough'));
-
-
-        /////////////////////////////////
-        //////// Weekly Push-ups ////////
-        /////////////////////////////////
-        function multiply(num1, num2) {
-            var sum = 0;
-            for (var i = 0; i < num2; i++) {
-                sum += num1;
-            }
-            return sum;
-        }
-
-        // console.log('function multiply: ' + multiply(8, 4));
-
-
-        function power(base, exponent) {
-            var product = 1;
-            for (var i = 0; i < exponent; i++) {
-                product *= base;
-            }
-            return product;
-        }
-
-        // console.log('function power: ' + power(3, 2));
+        return fib;
+    }
+    var fibArray = generateFibonaccis(10);
+    console.log(fibArray.join(" "));
+    console.log(fibArray);
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function search(array, num) {
+    //     var test = false;
+    //     for (var i = 0; i < array.length; i +=1) {
+    //         if (array[i] === num) {
+    //             // console.log(array[i]);
+    //             // return array[i];
+    //             return true;
+    //         }
+    //     }
+    //     return test;
+    // }
+    //
+    // var numbers = [10, 20, 30, 44, 55, 66];
+    // // for (let number of numbers) {
+    // //     if (number === 3) {
+    // //         console.log(number)
+    // //     }
+    // // }
+    //
+    // console.log(search(numbers, 50));
 
     });
 
